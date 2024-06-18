@@ -10,13 +10,6 @@ local function augroup(name)
   })
 end
 
--- for override LazyVIM default autocmds
-local function lazy_augroup(name)
-  return vim.api.nvim_create_augroup("lazyvim_" .. name, {
-    clear = true,
-  })
-end
-
 -- disable auto format when save
 autocmd("FileType", {
   group = augroup("disable_auto_format"),
@@ -27,13 +20,14 @@ autocmd("FileType", {
   end,
 })
 
--- Override LazyVIM default: wrap and check for spell in text filetypes
--- https://github1s.com/LazyVim/LazyVim/blob/HEAD/lua/lazyvim/config/autocmds.lua#L87
-autocmd("FileType", {
-  group = lazy_augroup("wrap_spell"),
-  pattern = { "*.txt", "*.tex", "*.typ", "gitcommit", "markdown" },
+-- auto save
+autocmd({ "InsertLeave", "TextChanged" }, {
+  group = augroup("auto_save"),
+  pattern = "*",
   callback = function()
-    vim.opt_local.wrap = false
-    vim.opt_local.spell = false
+    local buf = vim.api.nvim_get_current_buf()
+    vim.api.nvim_buf_call(buf, function()
+      vim.cmd("silent! write")
+    end)
   end,
 })
