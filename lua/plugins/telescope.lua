@@ -36,6 +36,7 @@ return {
       },
 
       pickers = {
+        find_files = preview_half_width,
         git_files = preview_half_width,
         live_grep = preview_half_width,
         highlights = preview_half_width,
