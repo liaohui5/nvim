@@ -6,6 +6,14 @@ return {
       "gcc",
       remap = true,
       noremap = true,
+      mode = "n",
+    },
+    {
+      "<c-\\>",
+      "gc",
+      remap = true,
+      noremap = true,
+      mode = "v",
     },
   },
 }
