@@ -4,7 +4,15 @@
 -- online chinese docs    : https://yianwillis.github.io/vimcdoc/doc/help.html
 -- Options are automatically loaded before lazy.nvim startup
 -----------------------------------------------------------------------
+-- leader key settings
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+vim.g.autoformat = true
+
+-- options
 vim.opt.relativenumber = false
+vim.opt.conceallevel = 0
+vim.opt.spelllang = {}
 
 -- disabled some language provider
 local disabled_providers = {
