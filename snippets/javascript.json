@@ -74,6 +74,11 @@
     "body": ["import {${0}} from \"${1}\";"],
     "description": "ES Destruction Import"
   },
+  "ES Import Vitest": {
+    "prefix": "impv",
+    "body": ["import { describe, it, expect } from \"vitest\";"],
+    "description": "ES Destruction Import"
+  },
   "Unit Test Describe": {
     "prefix": "desc",
     "body": ["describe('${1}', () => {", "  ${2}", "})"],
