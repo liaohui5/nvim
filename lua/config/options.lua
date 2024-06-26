@@ -13,6 +13,7 @@ vim.g.autoformat = true
 vim.opt.relativenumber = false
 vim.opt.conceallevel = 0
 vim.opt.spelllang = {}
+vim.opt.swapfile = false
 
 -- disabled some language provider
 local disabled_providers = {

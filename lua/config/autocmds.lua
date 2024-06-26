@@ -20,8 +20,8 @@ autocmd("FileType", {
   end,
 })
 
--- auto save
-autocmd({ "InsertLeave", "TextChanged" }, {
+-- auto save when focus lost
+autocmd({ "BufLeave" }, {
   group = augroup("auto_save"),
   pattern = "*",
   callback = function()
