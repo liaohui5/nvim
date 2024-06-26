@@ -58,3 +58,27 @@ map({ "t", "c" }, "<c-l>", "<Right>", {
   remap = true,
   noremap = true,
 })
+
+-- can be use yazi, joshuto, vifm, ranger
+-- https://github.com/sxyazi/yazi
+-- https://github.com/kamiyaa/joshuto
+-- https://github.com/vifm/vifm
+-- https://github.com/ranger/ranger
+local fileManager = "yazi"
+if vim.fn.executable(fileManager) then
+  map("n", "<c-f>", function()
+    LazyVim.terminal.open({ fileManager, LazyVim.root.get() })
+  end, {
+    noremap = true,
+    desc = "Open file manager(cwd)",
+  })
+
+  map("n", "<c-n>", function()
+    LazyVim.terminal.open({ fileManager, vim.fn.expand("%:p:h") })
+  end, {
+    noremap = true,
+    desc = "Open file manager",
+  })
+else
+  print(string.format("Please install %s first", fileManager))
+end
