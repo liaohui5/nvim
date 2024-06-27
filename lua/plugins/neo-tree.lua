@@ -13,7 +13,10 @@ return {
     },
     filesystem = {
       filtered_items = {
+        -- display all files
         hide_dotfiles = false,
+        hide_gitignored = false,
+        hide_hidden = false,
       },
     },
     source_selector = {
