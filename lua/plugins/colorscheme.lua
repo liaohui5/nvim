@@ -11,17 +11,17 @@ return {
       style = "moon", -- night, storm, moon
       on_highlights = function(hl, c)
         -- hidden neo-tree window separate line
-        hl.NeoTreeWinSeparator = {
+        hl["NeoTreeWinSeparator"] = {
           bg = c.bg,
           fg = c.bg,
         }
 
         -- remove keyworld font italic style
-        hl.Keyword.style.italic = false
-        hl["@keyword"].style.italic = false
+        hl["Keyword"].italic = false
+        hl["@keyword"].italic = false
 
         -- remove comment font italic style
-        hl.Comment.style.italic = false
+        hl["Comment"].italic = false
       end,
     },
   },
