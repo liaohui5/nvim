@@ -21,8 +21,13 @@ return {
 
     return {
       default_command = command,
-      set_default_events = { "VimEnter", "FocusGained", "InsertLeave", "CmdlineLeave" },
-      set_previous_events = { "InsertEnter" },
+      set_default_events = {
+        "VimEnter",
+        "FocusGained",
+        "InsertLeave",
+        "CmdlineLeave",
+      },
+      set_previous_events = {},
       keep_quiet_on_no_binary = true,
       async_switch_im = true,
     }
