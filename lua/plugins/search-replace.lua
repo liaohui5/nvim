@@ -1,19 +1,17 @@
 return {
   "roobert/search-replace.nvim",
+  dependencies = {
+    "folke/which-key.nvim",
+    opts = {
+      spec = {
+        { "<leader>r", group = "replace" },
+      },
+    },
+  },
   event = "VeryLazy",
   opts = {
     default_replace_single_buffer_options = "gcI",
     default_replace_multi_buffer_options = "egcI",
-  },
-  dependencies = {
-    "folke/which-key.nvim",
-    opts = {
-      defaults = {
-        ["<leader>r"] = {
-          name = "+replace",
-        },
-      },
-    },
   },
   keys = {
     {

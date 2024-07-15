@@ -9,13 +9,8 @@ return {
     dependencies = {
       "folke/which-key.nvim",
       opts = {
-        defaults = {
-          ["<leader>q"] = {
-            name = "+quit", -- replace "quit/session"
-          },
-          ["<leader>p"] = {
-            name = "+session",
-          },
+        spec = {
+          { "<leader>p", group = "session" },
         },
       },
     },
@@ -36,6 +31,15 @@ return {
       })
     end,
     keys = {
+      -- {
+      --   -- replace "quit/session"
+      --   "<leader>q",
+      --   group = "+quit",
+      -- },
+      -- {
+      --   "<leader>p", 
+      --   group = "+session",
+      -- },
       {
         "<leader>pr",
         "<cmd>SessionManager load_last_session<cr>",

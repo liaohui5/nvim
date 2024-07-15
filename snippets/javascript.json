@@ -84,6 +84,11 @@
     "body": ["import { createPinia, setActivePinia } from \"pinia\";${0}"],
     "description": "import pinia for unit tests"
   },
+  "Import TypeScript Types": {
+    "prefix": "impt",
+    "body": ["import type { ${0} } from \"${1}\";"],
+    "description": "import pinia for unit tests"
+  },
   "Unit Test Describe": {
     "prefix": "desc",
     "body": ["describe('${1}', () => {", "  ${2}", "})"],

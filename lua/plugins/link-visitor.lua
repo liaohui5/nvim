@@ -1,17 +1,15 @@
 return {
   -- open url in browser
   "xiyaowong/link-visitor.nvim",
-  event = "VeryLazy",
   dependencies = {
     "folke/which-key.nvim",
     opts = {
-      defaults = {
-        ["<leader>o"] = {
-          name = "+open",
-        },
+      spec = {
+        { "<leader>o", group = "open" },
       },
     },
   },
+  event = "VeryLazy",
   opts = {
     open_cmd = nil,
     silent = true,

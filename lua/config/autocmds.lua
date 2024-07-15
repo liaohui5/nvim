@@ -21,13 +21,13 @@ autocmd("FileType", {
 })
 
 -- auto save when focus lost
-autocmd({ "BufLeave" }, {
-  group = augroup("auto_save"),
-  pattern = "*",
-  callback = function()
-    local buf = vim.api.nvim_get_current_buf()
-    vim.api.nvim_buf_call(buf, function()
-      vim.cmd("silent! write")
-    end)
-  end,
-})
+-- autocmd({ "BufLeave" }, {
+--   group = augroup("auto_save"),
+--   pattern = "*",
+--   callback = function()
+--     local buf = vim.api.nvim_get_current_buf()
+--     vim.api.nvim_buf_call(buf, function()
+--       vim.cmd("silent! write")
+--     end)
+--   end,
+-- })

@@ -5,8 +5,8 @@ return {
   dependencies = {
     "folke/which-key.nvim",
     opts = {
-      defaults = {
-        ["<leader>a"] = { name = "+align" },
+      spec = {
+        { "<leader>a", group = "align" },
       },
     },
   },

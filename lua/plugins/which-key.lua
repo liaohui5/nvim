@@ -1,7 +1,6 @@
 return {
   "folke/which-key.nvim",
   opts = {
-    ignore_missing = false,
     show_help = true,
     triggers = "auto",
     plugins = {
