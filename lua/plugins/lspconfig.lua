@@ -10,6 +10,27 @@ return {
       remap = true,
       silent = true,
     })
+
+    -- restart lsp server
+    table.insert(keys, {
+      "<leader>rs",
+      function()
+        local options = {}
+        local prompt_options = {
+          prompt = "Select LSP server to restart",
+        }
+        local lsp_servers = vim.lsp.get_clients()
+        for _, server in ipairs(lsp_servers) do
+          table.insert(options, server.config.name)
+        end
+
+        vim.ui.select(options, prompt_options, function(choice)
+          vim.cmd("LspRestart " .. choice)
+        end)
+      end,
+      desc = "Restart LSP Server",
+      mode = "n",
+    })
   end,
   opts = {
     inlay_hints = {

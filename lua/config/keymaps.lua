@@ -2,6 +2,12 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 local map = vim.keymap.set
 
+-- better move to end of line
+map({ "n", "v" }, "$", "$h", {
+  remap = true,
+  noremap = true,
+})
+
 map("n", "<leader>ff", "<leader>cf", {
   remap = true,
   noremap = true,
