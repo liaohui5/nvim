@@ -2,7 +2,6 @@ return {
   "folke/which-key.nvim",
   opts = {
     show_help = true,
-    triggers = "auto",
     plugins = {
       spelling = { enabled = false },
     },
