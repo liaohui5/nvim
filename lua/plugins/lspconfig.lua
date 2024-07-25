@@ -1,5 +1,18 @@
 return {
   "neovim/nvim-lspconfig",
+  dependencies = {
+    "folke/which-key.nvim",
+    opts = {
+      spec = {
+        {
+          "<leader>r",
+          group = "lsp",
+          desc = "lsp",
+          icon = { icon = "󰒋" },
+        },
+      },
+    },
+  },
   init = function()
     local keys = require("lazyvim.plugins.lsp.keymaps").get()
     table.insert(keys, {

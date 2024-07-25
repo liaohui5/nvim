@@ -1,6 +1,5 @@
 return {
   { "persistence.nvim", enabled = false },
-  { "nvim-lua/plenary.nvim", enabled = true },
   {
     -- use neovim session manager replace persistence
     "Shatur/neovim-session-manager",
@@ -10,7 +9,17 @@ return {
       "folke/which-key.nvim",
       opts = {
         spec = {
-          { "<leader>p", group = "session" },
+          {
+            "<leader>p",
+            group = "session",
+            icon = { icon = "" },
+          },
+          {
+            -- override lazyvim default group
+            "<leader>q",
+            group = "quit",
+            desc = "quit",
+          },
         },
       },
     },
@@ -31,15 +40,6 @@ return {
       })
     end,
     keys = {
-      -- {
-      --   -- replace "quit/session"
-      --   "<leader>q",
-      --   group = "+quit",
-      -- },
-      -- {
-      --   "<leader>p", 
-      --   group = "+session",
-      -- },
       {
         "<leader>pr",
         "<cmd>SessionManager load_last_session<cr>",

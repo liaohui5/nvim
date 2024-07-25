@@ -6,22 +6,36 @@ return {
     "folke/which-key.nvim",
     opts = {
       spec = {
-        { "<leader>a", group = "align" },
+        {
+          "<leader>a",
+          desc = "algin",
+          group = "algin",
+          icon = { icon = "" },
+        },
       },
     },
   },
   keys = {
     {
       "<leader>aa",
-      "<cmd>lua require('align').align_to_string({ preview = true })<cr>",
-      desc = "Align by string",
-      mode = "v",
+      function()
+        require("align").align_to_string({
+          preview = true,
+        })
+      end,
+      desc = "Align by char",
+      mode = "x",
     },
     {
       "<leader>ar",
-      "<cmd>lua require('align').align_to_string({ regex = true, preview = true })<cr>",
+      function()
+        require("align").align_to_string({
+          preview = true,
+          regexp = true,
+        })
+      end,
       desc = "Align by string or regexp",
-      mode = "v",
+      mode = "x",
     },
   },
 }

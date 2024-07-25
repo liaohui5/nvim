@@ -5,7 +5,12 @@ return {
     "folke/which-key.nvim",
     opts = {
       spec = {
-        { "<leader>o", group = "open" },
+        {
+          "<leader>o",
+          desc = "open",
+          group = "open",
+          icon = { icon = "" },
+        },
       },
     },
   },
