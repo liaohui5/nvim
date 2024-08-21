@@ -15,7 +15,6 @@ return {
       },
     },
   },
-  event = "VeryLazy",
   opts = {
     open_cmd = nil,
     silent = true,

@@ -18,7 +18,7 @@ return {
       },
     },
     icons = {
-      mappings = false
+      mappings = vim.g.whichkey_icon_enabeld
     }
   },
 }
