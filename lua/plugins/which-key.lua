@@ -16,5 +16,8 @@ return {
         "neo-tree",
       },
     },
+    icons = {
+      mappings = false
+    }
   },
 }
