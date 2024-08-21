@@ -38,6 +38,10 @@ return {
         end
 
         vim.ui.select(options, prompt_options, function(choice)
+          if not choice then
+            -- cancled
+            return
+          end
           vim.cmd("LspRestart " .. choice)
         end)
       end,
