@@ -1,5 +1,6 @@
 return {
   "mini.surround",
+  event = "VeryLazy",
   opts = {
     mappings = {
       add = "gss",

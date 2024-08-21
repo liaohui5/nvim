@@ -1,5 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
+  event = "VeryLazy",
   dependencies = {
     "folke/which-key.nvim",
     opts = {

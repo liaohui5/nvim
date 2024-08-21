@@ -1,5 +1,6 @@
 return {
   "neo-tree.nvim",
+  event = "VeryLazy",
   opts = {
     close_if_last_window = true,
     hide_root_node = true,

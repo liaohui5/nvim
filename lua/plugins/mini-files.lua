@@ -1,5 +1,6 @@
 return {
   "echasnovski/mini.files",
+  event = "VeryLazy",
   enabled = false,
   opts = {
     options = {

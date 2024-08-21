@@ -1,5 +1,6 @@
 return {
   "lualine.nvim",
+  event = "VeryLazy",
   opts = {
     options = {
       globalstatus = true,

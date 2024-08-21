@@ -1,6 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    event = "VeryLazy",
     keys = {
       {
         "+",
@@ -49,10 +50,13 @@ return {
     -- some quick action based on treesitter
     "ckolkey/ts-node-action",
     dependencies = { "nvim-treesitter" },
+    event = "VeryLazy",
     keys = {
       {
         "ga",
-        "<cmd>NodeAction<cr>",
+        function()
+          require("ts-node-action").node_action()
+        end,
         desc = "Trigger Node Action",
       },
     },
@@ -61,6 +65,7 @@ return {
     -- quick split/join multiple lines
     "Wansmer/treesj",
     dependencies = { "nvim-treesitter" },
+    event = "VeryLazy",
     keys = {
       {
         "gS",

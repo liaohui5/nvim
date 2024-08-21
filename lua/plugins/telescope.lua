@@ -1,5 +1,6 @@
 return {
   "telescope.nvim",
+  event = "VeryLazy",
   keys = {
     { "<leader>ff", false },
   },

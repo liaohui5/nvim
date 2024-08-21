@@ -1,5 +1,6 @@
 return {
   "gbprod/yanky.nvim",
+  event = "VeryLazy",
   keys = {
     { "<leader>p", false },
     {

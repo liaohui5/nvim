@@ -1,5 +1,6 @@
 return {
   "mini.comment",
+  event = "VeryLazy",
   keys = {
     {
       "<c-\\>",

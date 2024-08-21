@@ -1,5 +1,6 @@
 return {
   "akinsho/bufferline.nvim",
+  event = "VeryLazy",
   opts = function(_, opts)
     return vim.tbl_deep_extend("force", opts, {
       options = {
