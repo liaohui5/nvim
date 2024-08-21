@@ -15,7 +15,7 @@ map({ "n", "v" }, "$", "$h", opts("End of line"))
 
 map("n", "<leader>ff", "<leader>cf", opts("Format Document"))
 
-map("n", "<leader>fs", "<c-s>", opts("Save Document"))
+map("n", "<leader>fs", "<cmd>write<cr>", opts("Save", false))
 
 map("n", "<c-e>", "<leader>e", opts("Open file explorer"))
 
@@ -35,12 +35,7 @@ map({ "t", "c" }, "<c-h>", "<Left>", opts("Move left"))
 
 map({ "t", "c" }, "<c-l>", "<Right>", opts("Move right"))
 
--- can be use yazi, joshuto, vifm, ranger
--- https://github.com/sxyazi/yazi
--- https://github.com/kamiyaa/joshuto
--- https://github.com/vifm/vifm
--- https://github.com/ranger/ranger
-local file_manager = "yazi"
+local file_manager = vim.g.terminal_file_manager
 if vim.fn.executable(file_manager) then
   local open_file_manager = function(open_path)
     LazyVim.terminal.open({ file_manager, open_path }, {

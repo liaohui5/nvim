@@ -12,6 +12,13 @@ vim.g.autoformat = true
 -- custom settings
 vim.g.auto_completation_trigger = "Manual" -- Manual | InsertEnter | TextChanged | Both
 
+-- can be use yazi, joshuto, vifm, ranger
+-- https://github.com/sxyazi/yazi
+-- https://github.com/kamiyaa/joshuto
+-- https://github.com/vifm/vifm
+-- https://github.com/ranger/ranger
+vim.g.terminal_file_manager = "yazi"
+
 -- options
 vim.opt.relativenumber = false
 vim.opt.conceallevel = 0
