@@ -9,7 +9,18 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.autoformat = true
 
+-----------------------------------------
+-- neovim options
+-----------------------------------------
+vim.opt.relativenumber = false
+vim.opt.conceallevel = 0
+vim.opt.spelllang = {}
+vim.opt.swapfile = false
+
+-----------------------------------------
 -- custom settings
+-----------------------------------------
+-- how to trigger the suggestion window to open
 vim.g.auto_completation_trigger = "Manual" -- Manual | InsertEnter | TextChanged | Both
 
 -- can be use yazi, joshuto, vifm, ranger
@@ -19,13 +30,9 @@ vim.g.auto_completation_trigger = "Manual" -- Manual | InsertEnter | TextChanged
 -- https://github.com/ranger/ranger
 vim.g.terminal_file_manager = "yazi"
 
--- options
-vim.opt.relativenumber = false
-vim.opt.conceallevel = 0
-vim.opt.spelllang = {}
-vim.opt.swapfile = false
-
+-----------------------------------------
 -- disabled some language provider
+-----------------------------------------
 local disabled_providers = {
   -- "node",
   -- "python3",

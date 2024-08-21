@@ -1,5 +1,6 @@
 return {
   "roobert/search-replace.nvim",
+  event = "VeryLazy",
   opts = {
     -- vim substitute flags
     -- g: global
