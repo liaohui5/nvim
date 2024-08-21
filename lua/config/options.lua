@@ -9,6 +9,9 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.autoformat = true
 
+-- custom settings
+vim.g.auto_completation_trigger = "Manual" -- Manual | InsertEnter | TextChanged | Both
+
 -- options
 vim.opt.relativenumber = false
 vim.opt.conceallevel = 0

@@ -10,20 +10,35 @@ return {
 
     local cmp = require("cmp")
 
+    opts.completion.autocomplete = (function()
+      local triggers = {
+        Manual = {},
+        InsertEnter = { "InsertEnter" },
+        TextChanged = { "TextChanged" },
+        Both = {
+          "InsertEnter",
+          "TextChanged",
+        },
+      }
+      return triggers[vim.g.auto_completation_trigger] or triggers.TextChanged
+    end)()
+
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
-      ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-      ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-      ["<C-b>"] = cmp.mapping.scroll_docs(-5),
-      ["<C-f>"] = cmp.mapping.scroll_docs(5),
-      ["<C-Space>"] = cmp.mapping.complete(),
-      ["<C-e>"] = cmp.mapping.abort(),
-      ["<CR>"] = cmp.mapping.confirm({ select = true }),
-      ["<S-CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace }),
-      ["<C-CR>"] = function(fallback)
+      ["<c-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+      ["<c-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+      ["<c-b>"] = cmp.mapping.scroll_docs(-5),
+      ["<c-f>"] = cmp.mapping.scroll_docs(5),
+      ["<c-o>"] = cmp.mapping(function()
+        cmp.complete()
+      end),
+      ["<c-e>"] = cmp.mapping.abort(),
+      ["<cr>"] = cmp.mapping.confirm({ select = true }),
+      ["<s-cr>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace }),
+      ["<c-cr>"] = function(fallback)
         cmp.abort()
         fallback()
       end,
-      ["<Tab>"] = cmp.mapping(function(fallback)
+      ["<tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item({ select = true })
         elseif vim.snippet.active({ direction = 1 }) then
@@ -36,7 +51,7 @@ return {
           fallback()
         end
       end, { "i", "s" }),
-      ["<S-Tab>"] = cmp.mapping(function(fallback)
+      ["<s-tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_prev_item()
         elseif vim.snippet.active({ direction = -1 }) then
