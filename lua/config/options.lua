@@ -18,22 +18,6 @@ vim.opt.spelllang = {}
 vim.opt.swapfile = false
 
 -----------------------------------------
--- custom settings
------------------------------------------
--- how to trigger the suggestion window to open
-vim.g.auto_completation_trigger = "Manual" -- Manual | InsertEnter | TextChanged | Both
-
--- enable which-key menu icons
-vim.g.whichkey_icon_enabeld = false
-
--- can be use yazi, joshuto, vifm, ranger
--- https://github.com/sxyazi/yazi
--- https://github.com/kamiyaa/joshuto
--- https://github.com/vifm/vifm
--- https://github.com/ranger/ranger
-vim.g.terminal_file_manager = "yazi"
-
------------------------------------------
 -- disabled some language provider
 -----------------------------------------
 local disabled_providers = {

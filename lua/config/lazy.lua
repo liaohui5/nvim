@@ -21,8 +21,13 @@ require("lazy").setup({
     lazy = true,
     version = false,
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
-  checker = { enabled = true }, -- automatically check for plugin updates
+  install = {
+    colorscheme = { "tokyonight" },
+  },
+  checker = {
+    -- automatically check for plugin updates
+    enabled = vim.g.enable_lazy_check_updates,
+  },
   change_detection = {
     notify = false,
   },
