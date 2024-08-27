@@ -29,9 +29,7 @@ return {
       ["<c-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
       ["<c-b>"] = cmp.mapping.scroll_docs(-5),
       ["<c-f>"] = cmp.mapping.scroll_docs(5),
-      ["<c-o>"] = cmp.mapping(function()
-        cmp.complete()
-      end),
+      ["<c-o>"] = cmp.mapping.complete(),
       ["<c-e>"] = cmp.mapping.abort(),
       ["<cr>"] = cmp.mapping.confirm({ select = true }),
       ["<s-cr>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace }),
