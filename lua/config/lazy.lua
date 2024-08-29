@@ -12,6 +12,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- lazy.nvim options: https://lazy.folke.io/configuration
 require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
@@ -26,7 +27,8 @@ require("lazy").setup({
   },
   checker = {
     -- automatically check for plugin updates
-    enabled = vim.g.enable_lazy_check_updates,
+    enabled = vim.g.lazy_check_update_enabled or true,
+    frequency = vim.g.lazy_check_update_frequency or 3600,
   },
   change_detection = {
     notify = false,

@@ -14,9 +14,6 @@ if vim.g.neovide then
   require("client.neovide")
 end
 
--- load global custom settings
-require("config.settings")
-
 -- bootstrap LazyVIM and plugins
 ---@diagnostic disable-next-line: different-requires
 require("config.lazy")
