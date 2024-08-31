@@ -11,18 +11,10 @@ return {
 
     local cmp = require("cmp")
 
-    opts.completion.autocomplete = (function()
-      local triggers = {
-        Manual = {},
-        InsertEnter = { "InsertEnter" },
-        TextChanged = { "TextChanged" },
-        Both = {
-          "InsertEnter",
-          "TextChanged",
-        },
-      }
-      return triggers[vim.g.auto_completation_trigger] or triggers.TextChanged
-    end)()
+    opts.completion.autocomplete = {
+      "TextChanged",
+      -- "InsertEnter",
+    }
 
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
       ["<c-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),

@@ -27,8 +27,7 @@ require("lazy").setup({
   },
   checker = {
     -- automatically check for plugin updates
-    enabled = vim.g.lazy_check_update_enabled or true,
-    frequency = vim.g.lazy_check_update_frequency or 3600,
+    enabled = true,
   },
   change_detection = {
     notify = false,
