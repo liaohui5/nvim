@@ -12,7 +12,7 @@ return {
   },
   keys = {
     {
-      "<leader>rs",
+      "<leader>rr",
       "<cmd>SearchReplaceWithinVisualSelection<cr>",
       desc = "Search and replace in selection",
       mode = "v",
