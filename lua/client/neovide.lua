@@ -6,28 +6,29 @@
 ----------------------------------------------------------------------------------
 -- set neovide extra global options
 ----------------------------------------------------------------------------------
--- vim.g.neovide_cursor_vfx_mode         = ""
--- vim.g.neovide_transparency            = 0.8
-vim.g.neovide_cursor_animation_length = 0
-vim.g.neovide_fullscreen              = false
-vim.g.neovide_remember_window_size    = true
-vim.g.neovide_input_macos_alt_is_meta = true
-vim.g.neovide_input_use_logo          = true
-vim.g.neovide_profiler                = false
+vim.g.neovide_cursor_animation_length     = 0.05
+vim.g.neovide_cursor_antialiasing         = true
+vim.g.neovide_cursor_animate_command_line = false
+vim.g.neovide_scroll_animation_length     = 0.1
+vim.g.neovide_fullscreen                  = false
+vim.g.neovide_profiler                    = false
+vim.g.linespace                           = 0.8
+vim.g.neovide_text_contrast               = 0.8
 
 ----------------------------------------------------------------------------------
 -- set gui font family
 -- https://neovide.dev/configuration.html#font
 ----------------------------------------------------------------------------------
-vim.opt.guifont = "JetBrainsMono Nerd Font Mono:h16:#e-subpixelantialias:#h-sLight"
+-- vim.opt.guifont = "JetBrainsMono Nerd Font Mono:h16"
 
 ----------------------------------------------------------------------------------
 -- bind hotkeys in neovide
 ----------------------------------------------------------------------------------
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opts = {
   noremap = true,
   silent = true,
+  remap = false,
 }
 map("v", "<D-c>", '"+y', opts)       -- Copy
 map("n", "<D-v>", '"+P', opts)       -- Paste normal mode
