@@ -1,3 +1,8 @@
+------------------------------------------------------------------------------------
+-- find more info about nvim-cmp.nvim
+-- github: https://github.com/hrsh7th/nvim-cmp
+-- config: https://github.com/hrsh7th/nvim-cmp/blob/main/lua/cmp/config/default.lua
+------------------------------------------------------------------------------------
 return {
   "hrsh7th/nvim-cmp",
   event = "VeryLazy",
@@ -10,11 +15,28 @@ return {
     end
 
     local cmp = require("cmp")
+    local ctx = require("cmp.config.context")
 
-    opts.completion.autocomplete = {
-      "TextChanged",
-      -- "InsertEnter",
-    }
+    -- https://github.com/hrsh7th/nvim-cmp/blob/main/lua/cmp/config/default.lua
+    local default_config = cmp.get_config()
+
+    -- disable nvim-cmp plugin in comment
+    opts.enabled = function()
+      if ctx.in_treesitter_capture("comment") or ctx.in_syntax_group("Comment") then
+        return false
+      end
+      return default_config.enabled()
+    end
+
+    -- default value is too fast
+    opts.performance = vim.tbl_extend("force", default_config.performance, {
+      debounce = 300,
+      throttle = 500,
+      fetching_timeout = 500,
+      confirm_resolve_timeout = 100,
+      async_budget = 1,
+      max_view_entries = 100,
+    })
 
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
       ["<c-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
