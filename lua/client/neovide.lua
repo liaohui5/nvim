@@ -24,14 +24,18 @@ vim.g.neovide_text_contrast               = 0.8
 ----------------------------------------------------------------------------------
 -- bind hotkeys in neovide
 ----------------------------------------------------------------------------------
-local map = vim.keymap.set
+local api, fn, map = vim.api, vim.fn, vim.keymap.set
 local opts = {
   noremap = true,
   silent = true,
   remap = false,
 }
-map("v", "<D-c>", '"+y', opts)       -- Copy
-map("n", "<D-v>", '"+P', opts)       -- Paste normal mode
-map("v", "<D-v>", '"+P', opts)       -- Paste visual mode
-map("c", "<D-v>", "<c-R>+", opts)    -- Paste command mode
-map("i", "<D-v>", '<ESC>"+PA', opts) -- Paste insert mode
+
+-- copy selection to clipboard
+map("v", "<D-c>", '"+y', opts)
+
+-- paste clipboard content to cursor
+map({"v", "c", "i"}, "<D-v>", function ()
+  local clipboard_content = fn.getreg("+")
+  api.nvim_put({ clipboard_content }, 'c', true, true)
+end, opts)
