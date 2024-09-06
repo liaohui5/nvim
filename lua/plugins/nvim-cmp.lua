@@ -64,6 +64,7 @@ return {
         elseif has_words_before() then
           cmp.complete()
         else
+          vim.snippet.stop()
           fallback()
         end
       end, { "i", "s" }),
@@ -75,6 +76,7 @@ return {
             vim.snippet.jump(-1)
           end)
         else
+          vim.snippet.stop()
           fallback()
         end
       end, { "i", "s" }),
