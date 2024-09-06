@@ -28,15 +28,18 @@ return {
       return default_config.enabled()
     end
 
+    -- how to trigger code completation window
+    -- opts.completion.autocomplete = {}
+
     -- default value is too fast
-    opts.performance = vim.tbl_extend("force", default_config.performance, {
-      debounce = 300,
-      throttle = 500,
-      fetching_timeout = 500,
-      confirm_resolve_timeout = 100,
-      async_budget = 1,
-      max_view_entries = 100,
-    })
+    -- opts.performance = vim.tbl_extend("force", default_config.performance, {
+    --   debounce = 300,
+    --   throttle = 500,
+    --   fetching_timeout = 500,
+    --   confirm_resolve_timeout = 100,
+    --   async_budget = 1,
+    --   max_view_entries = 100,
+    -- })
 
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
       ["<c-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
