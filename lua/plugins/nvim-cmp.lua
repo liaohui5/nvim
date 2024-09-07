@@ -32,14 +32,14 @@ return {
     -- opts.completion.autocomplete = {}
 
     -- default value is too fast
-    -- opts.performance = vim.tbl_extend("force", default_config.performance, {
-    --   debounce = 300,
-    --   throttle = 500,
-    --   fetching_timeout = 500,
-    --   confirm_resolve_timeout = 100,
-    --   async_budget = 1,
-    --   max_view_entries = 100,
-    -- })
+    opts.performance = vim.tbl_extend("force", default_config.performance, {
+      debounce = 300,
+      throttle = 150,
+      -- fetching_timeout = 500,
+      -- confirm_resolve_timeout = 100,
+      -- async_budget = 1,
+      -- max_view_entries = 100,
+    })
 
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
       ["<c-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -64,7 +64,6 @@ return {
         elseif has_words_before() then
           cmp.complete()
         else
-          vim.snippet.stop()
           fallback()
         end
       end, { "i", "s" }),
@@ -76,7 +75,6 @@ return {
             vim.snippet.jump(-1)
           end)
         else
-          vim.snippet.stop()
           fallback()
         end
       end, { "i", "s" }),
@@ -88,7 +86,11 @@ return {
       -- select previous suggestion item
       "<c-l>",
       function()
-        return vim.snippet.active({ direction = 1 }) and vim.snippet.jump(1)
+        if vim.snippet.active({ direction = 1 }) then
+          vim.snippet.jump(1)
+        else
+          vim.snippet.stop()
+        end
       end,
       silent = true,
       mode = { "i", "s" },
@@ -97,7 +99,11 @@ return {
       -- select next suggestion item
       "<c-h>",
       function()
-        return vim.snippet.active({ direction = -1 }) and vim.snippet.jump(-1)
+        if vim.snippet.active({ direction = -1 }) then
+          vim.snippet.jump(-1)
+        else
+          vim.snippet.stop()
+        end
       end,
       silent = true,
       mode = { "i", "s" },
