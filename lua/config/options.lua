@@ -17,6 +17,9 @@ vim.g.autoformat = true
 -- https://github.com/ranger/ranger
 vim.g.terminal_file_manager = "yazi"
 
+-- default disabled auto completation
+vim.g.auto_completation_enabled = false
+
 -----------------------------------------
 -- neovim options
 -----------------------------------------

@@ -22,6 +22,9 @@ return {
 
     -- disable nvim-cmp plugin in comment
     opts.enabled = function()
+      if not vim.g.auto_completation_enabled then
+        return false
+      end
       if ctx.in_treesitter_capture("comment") or ctx.in_syntax_group("Comment") then
         return false
       end
@@ -107,6 +110,22 @@ return {
       end,
       silent = true,
       mode = { "i", "s" },
+    },
+    {
+      -- toggle auto completation enabled
+      "<leader>ct",
+      function()
+        if vim.g.auto_completation_enabled then
+          vim.g.auto_completation_enabled = false
+          print("[nvim-cmp]auto completation disabled")
+        else
+          vim.g.auto_completation_enabled = true
+          print("[nvim-cmp]auto completation enabled")
+        end
+      end,
+      desc = "toggle auto completation",
+      silent = true,
+      mode = "n",
     },
   },
 }
