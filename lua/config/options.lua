@@ -18,7 +18,7 @@ vim.g.autoformat = true
 vim.g.terminal_file_manager = "yazi"
 
 -- default disabled auto completation
-vim.g.auto_completation_enabled = false
+vim.g.auto_completation_enabled = true
 
 -----------------------------------------
 -- neovim options
