@@ -16,8 +16,15 @@ return {
   "keaising/im-select.nvim",
   event = "VeryLazy",
   enabled = function()
-    -- disabled im-select in Windows
     local os_info = vim.loop.os_uname()
+
+    -- dsiabled im-select in MacOS, recommend use (skhd + im-select)
+    -- skhdrc: 0x35 -> : im-select com.apple.keylayout.ABC
+    if string.find(os_info.sysname, "Darwin") then
+      return false
+    end
+
+    -- disabled im-select in Windows
     if string.find(os_info.sysname, "Windows") then
       return false
     end
