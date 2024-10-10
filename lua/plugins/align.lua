@@ -8,6 +8,7 @@ return {
           "<leader>a",
           desc = "algin",
           group = "algin",
+          mode = "v",
           icon = { icon = "" },
         },
       },

@@ -8,6 +8,7 @@ return {
           "<leader>o",
           desc = "open",
           group = "open",
+          mode = "n",
           icon = { icon = "" },
         },
       },

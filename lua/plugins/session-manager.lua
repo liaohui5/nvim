@@ -8,12 +8,14 @@ return {
         {
           "<leader>p",
           group = "session",
+          mode = "n",
           icon = { icon = "" },
         },
         {
           -- override lazyvim default group
           "<leader>q",
           group = "quit",
+          mode = "n",
           desc = "quit",
         },
       },

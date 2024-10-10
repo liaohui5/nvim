@@ -2,10 +2,6 @@ return {
   "folke/which-key.nvim",
   event = "VeryLazy",
   opts = {
-    show_help = true,
-    plugins = {
-      spelling = { enabled = false },
-    },
     layout = {
       spacing = 4,
       align = "center",
@@ -18,6 +14,7 @@ return {
       },
     },
     icons = {
+      -- disabled icon
       mappings = false,
     },
   },
