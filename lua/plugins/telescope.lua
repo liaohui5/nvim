@@ -32,7 +32,7 @@ return {
         file_ignore_patterns = {
           "**node_modules",
           "**.git",
-          "**.cargo",
+          "**.target",
         },
       },
 
