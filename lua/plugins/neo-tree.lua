@@ -31,13 +31,15 @@ return {
         -- close buffer when file deleted
         event = "file_deleted",
         handler = function(filepath)
-          local bufids = vim.api.nvim_list_bufs()
-          for _, id in ipairs(bufids) do
+          local buf_ids = vim.api.nvim_list_bufs()
+          local close_buf_cmd = "bdelete "
+          for _, id in ipairs(buf_ids) do
             local buf_path = vim.fn.expand(vim.api.nvim_buf_get_name(id))
             if buf_path == filepath then
-              vim.cmd("silent bd " .. id)
+              close_buf_cmd = string.format(" %s %s", close_buf_cmd, id)
             end
           end
+          vim.cmd(close_buf_cmd)
         end,
       },
     },
@@ -50,7 +52,10 @@ return {
       },
       window = {
         mappings = {
-          ["d"] = {
+          -- See `:h neo-tree-mappings` for a list of built-in commands.
+          ["d"] = "cut_to_clipboard",
+          ["o"] = "open",
+          ["x"] = {
             -- move file to trash not delete from disk
             nowait = true,
             command = function(state)

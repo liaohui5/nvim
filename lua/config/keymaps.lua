@@ -18,7 +18,7 @@ map("n", "<leader>ff", "<leader>cf", opts("Format Document"))
 
 map("n", "<leader>rn", "<leader>cr", opts("Rename Symbol"))
 
-map("n", "<leader>fs", "<cmd>write<cr>", opts("Save", false))
+map("n", "<leader>fs", "<cmd>wa!<cr>", opts("Save", false))
 
 map("n", "<c-e>", "<leader>e", opts("Open file explorer"))
 
