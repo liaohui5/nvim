@@ -51,6 +51,7 @@ return {
         hide_hidden = false,
       },
       window = {
+        width = 32,
         mappings = {
           -- See `:h neo-tree-mappings` for a list of built-in commands.
           ["d"] = "cut_to_clipboard",
