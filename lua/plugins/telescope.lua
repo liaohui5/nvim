@@ -30,9 +30,10 @@ return {
           prompt_position = "top",
         },
         file_ignore_patterns = {
-          "**node_modules",
-          "**.git",
-          "**.target",
+          "**.git", -- git files
+          "**node_modules", -- nodejs dependence
+          "**vendor", -- php dependence
+          "**target", -- rust built output
         },
       },
 
