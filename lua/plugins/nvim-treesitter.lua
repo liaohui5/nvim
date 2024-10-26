@@ -58,6 +58,7 @@ return {
           require("ts-node-action").node_action()
         end,
         desc = "Trigger Node Action",
+        mode = "n"
       },
     },
   },

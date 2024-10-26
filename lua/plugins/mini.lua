@@ -20,29 +20,6 @@ return {
     },
   },
   {
-    "echasnovski/mini.files",
-    event = "VeryLazy",
-    enabled = false,
-    opts = {
-      options = {
-        -- Whether to use for editing directories
-        -- Disabled by default in LazyVim because neo-tree is used for that
-        use_as_default_explorer = false,
-      },
-      mappings = {
-        close = "<c-q>",
-      },
-    },
-    keys = {
-      {
-        "<c-f>",
-        "<leader>fm",
-        remap = true,
-        noremap = true,
-      },
-    },
-  },
-  {
     "echasnovski/mini.surround",
     event = "VeryLazy",
     opts = {
@@ -59,4 +36,39 @@ return {
     event = "VeryLazy",
     enabled = true,
   },
+  {
+    "echasnovski/mini.align",
+    opts = {
+      mappings = {
+        start = "ga",
+        start_with_preview = "gA",
+      },
+    },
+    keys = {
+      { "ga", mode = "v" },
+      { "gA", mode = "v" },
+    },
+  },
+  -- {
+  --   "echasnovski/mini.files",
+  --   event = "VeryLazy",
+  --   opts = {
+  --     options = {
+  --       -- Whether to use for editing directories
+  --       -- Disabled by default in LazyVim because neo-tree is used for that
+  --       use_as_default_explorer = false,
+  --     },
+  --     mappings = {
+  --       close = "<c-q>",
+  --     },
+  --   },
+  --   keys = {
+  --     {
+  --       "<c-f>",
+  --       "<leader>fm",
+  --       remap = true,
+  --       noremap = true,
+  --     },
+  --   },
+  -- },
 }
