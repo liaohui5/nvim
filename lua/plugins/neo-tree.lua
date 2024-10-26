@@ -56,9 +56,23 @@ return {
           -- See `:h neo-tree-mappings` for a list of built-in commands.
           ["d"] = "cut_to_clipboard",
           ["o"] = "open",
+          ["<c-o>"] = {
+            -- open file in macOS finder.app
+            nowait = true,
+            desc = "open file in Finder",
+            command = function(state)
+              local node = state.tree:get_node()
+              local path = node.path
+              if node.type == "file" then
+                path = node._parent_id
+              end
+              vim.cmd("silent !open " .. path)
+            end,
+          },
           ["x"] = {
             -- move file to trash not delete from disk
             nowait = true,
+            desc = "move file to trash",
             command = function(state)
               local node = state.tree:get_node()
               local strfmt = string.format
