@@ -45,8 +45,8 @@ return {
       },
     },
     keys = {
-      { "ga", mode = "v" },
-      { "gA", mode = "v" },
+      { "ga", mode = "v", desc = "align by string" },
+      { "gA", mode = "v", desc = "align by string with preview" },
     },
   },
   -- {

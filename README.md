@@ -14,7 +14,7 @@ git clone https://github.com/liaohui5/nvim.git ~/.config/nvim
 
 ## preview
 
-![preview](https://raw.githubusercontent.com/liaohui5/images/main/images202408190231855.png)
+![preview](https://raw.githubusercontent.com/liaohui5/images/main/images/images202408190231855.png)
 
 ## !! be careful !!
 
