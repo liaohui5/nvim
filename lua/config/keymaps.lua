@@ -58,7 +58,7 @@ map("n", "<leader>rs", function()
   end)
 end, opts("Restart LSP server", false))
 
--- open tui file explorer, liek yazi/joshuto/vifm/ranger
+-- open tui file explorer, like yazi/joshuto/vifm/ranger
 local file_manager = vim.g.terminal_file_manager
 if vim.fn.executable(file_manager) then
   local open_file_manager = function(open_path)
