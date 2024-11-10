@@ -1,40 +1,12 @@
----@diagnostic disable: undefined-field
 -- auto switch input method
 -- github: https://github.com/keaising/im-select.nvim
-
--- get im-select command string once by os_info
-local im_select_command = (function()
-  local os_info = vim.loop.os_uname()
-  local command = "im-select"
-  if string.find(os_info.release, "WSL") ~= nil then
-    command = command .. ".exe"
-  end
-  return command
-end)()
 
 return {
   "keaising/im-select.nvim",
   event = "VeryLazy",
-  enabled = function()
-    local os_info = vim.loop.os_uname()
-
-    -- dsiabled im-select in MacOS, recommend use (skhd + im-select)
-    -- skhdrc: 0x35 -> : im-select com.apple.keylayout.ABC
-    if string.find(os_info.sysname, "Darwin") then
-      return false
-    end
-
-    -- disabled im-select in Windows
-    if string.find(os_info.sysname, "Windows") then
-      return false
-    end
-
-    -- check im_select_command is executable
-    return vim.fn.executable(im_select_command)
-  end,
+  enabled = false,
   opts = function()
     return {
-      default_command = im_select_command,
       set_default_events = {
         "VimEnter",
         "FocusGained",
