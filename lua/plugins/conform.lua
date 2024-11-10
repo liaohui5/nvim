@@ -19,10 +19,14 @@ return {
       opts.formatters = opts.formatters or {}
 
       -- dprint rules: https://dprint.dev/plugins/
+      opts.formatters_by_ft.vue = {
+        "dprint",
+        lsp_format = "fallback",
+      }
       opts.formatters.dprint = {
         condition = function(ctx)
           -- if dprint.json exists
-          return vim.fs.find({ "dprint.json" }, { path = ctx.filename, upward = true })[1]
+          return vim.fs.find({ "dprint.json", ".dprint.json" }, { path = ctx.filename, upward = true })[1]
         end,
       }
 
@@ -31,7 +35,7 @@ return {
         "rustfmt",
         lsp_format = "fallback",
       }
-      opts.formatters.dprint = {
+      opts.formatters.rustfmt = {
         condition = function(ctx)
           -- if rustfmt.toml exists
           return vim.fs.find({ "rustfmt.toml", ".rustfmt.toml" }, {
