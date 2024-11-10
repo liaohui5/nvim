@@ -17,9 +17,6 @@ vim.g.autoformat = true
 -- https://github.com/ranger/ranger
 vim.g.terminal_file_manager = "yazi"
 
--- default disabled auto completation
-vim.g.auto_completation_enabled = true
-
 -- default enabled auto save when lost focus
 vim.g.auto_save_on_lost_focus_enabled = true
 
