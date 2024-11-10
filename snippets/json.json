@@ -1,0 +1,35 @@
+{
+  "Generate dprint default config": {
+    "prefix": "dprintconfig",
+    "body": [
+      "{",
+      "  \"typescript\": {",
+      "    \"quoteStyle\": \"alwaysDouble\",",
+      "    \"quoteProps\": \"asNeeded\"",
+      "  },",
+      "  \"vue\": {",
+      "    \"indentTemplate\": false",
+      "  },",
+      "  \"includes\": [",
+      "    \"**/*.ts\",",
+      "    \"**/*.josn\",",
+      "    \"**/*.js\",",
+      "    \"**/*.html\",",
+      "    \"**/*.vue\",",
+      "  ],",
+      "  \"excludes\": [",
+      "    \"**/node_modules\",",
+      "    \"**/*-lock.json\"",
+      "  ],",
+      "  \"plugins\": [",
+      "    \"https://plugins.dprint.dev/typescript-0.93.2.wasm\",",
+      "    \"https://plugins.dprint.dev/json-0.19.4.wasm\",",
+      "    \"https://plugins.dprint.dev/g-plane/markup_fmt-v0.15.1.wasm\",",
+      "    \"https://plugins.dprint.dev/malobre/vue-v0.5.0.wasm\"",
+      "  ]",
+      "}",
+      ""
+    ],
+    "description": "generate dprint default config"
+  }
+}
