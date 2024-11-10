@@ -9,7 +9,6 @@ return {
     opts = {
       ensure_installed = {
         "dprint",
-        "rustfmt",
       },
     },
   },
@@ -18,30 +17,35 @@ return {
     opts = function(_, opts)
       opts.formatters = opts.formatters or {}
 
-      -- dprint rules: https://dprint.dev/plugins/
-      opts.formatters_by_ft.vue = {
-        "dprint",
-        lsp_format = "fallback",
+      local fts = {
+        "html",
+        "vue",
+        "javascript",
+        "typescript",
+        "json",
+        "rust",
+        "toml",
+        "yaml",
+        "Dockerfile",
+        "python",
+        "css",
+        "less",
+        "scss",
+        "sass",
       }
+
+      for _, ft in ipairs(fts) do
+        opts.formatters_by_ft[ft] = {
+          "dprint",
+          lsp_format = "fallback",
+        }
+      end
+
+      -- dprint rules: https://dprint.dev/plugins/
       opts.formatters.dprint = {
         condition = function(ctx)
           -- if dprint.json exists
           return vim.fs.find({ "dprint.json", ".dprint.json" }, { path = ctx.filename, upward = true })[1]
-        end,
-      }
-
-      -- rustfmt rules: https://rust-lang.github.io/rustfmt/
-      opts.formatters_by_ft.rust = {
-        "rustfmt",
-        lsp_format = "fallback",
-      }
-      opts.formatters.rustfmt = {
-        condition = function(ctx)
-          -- if rustfmt.toml exists
-          return vim.fs.find({ "rustfmt.toml", ".rustfmt.toml" }, {
-            path = ctx.filename,
-            upward = true,
-          })[1]
         end,
       }
     end,
