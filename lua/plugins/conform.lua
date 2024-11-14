@@ -19,6 +19,7 @@ return {
 
       local fts = {
         "html",
+        "vue",
         "javascript",
         "typescript",
         "json",
