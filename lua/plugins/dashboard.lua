@@ -53,13 +53,13 @@ return {
         icon = "",
         desc = "Restore last session",
         key = "l",
-        action = [[lua require("persistence").load({ last = true })]],
+        action = "SessionManager load_last_session",
       },
       {
         icon = "",
         desc = "Pick sessions",
         key = "p",
-        action = [[lua require("persistence").select()]],
+        action = "SessionManager load_session",
       },
       {
         icon = "",
