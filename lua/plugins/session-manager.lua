@@ -1,30 +1,8 @@
 return {
   { "persistence.nvim", enabled = false },
   {
-    -- dependencies
-    "folke/which-key.nvim",
-    opts = {
-      spec = {
-        {
-          "<leader>p",
-          group = "session",
-          mode = "n",
-          icon = { icon = "" },
-        },
-        {
-          -- override lazyvim default group
-          "<leader>q",
-          group = "quit",
-          mode = "n",
-          desc = "quit",
-        },
-      },
-    },
-  },
-  {
     -- use neovim session manager replace persistence
     "Shatur/neovim-session-manager",
-    enabled = true,
     event = "VeryLazy",
     opts = function(_, opts)
       local Path = require("plenary.path")
@@ -42,5 +20,25 @@ return {
         },
       })
     end,
+    keys = {
+      {
+        "<leader>ql",
+        "<cmd>SessionManager load_session<cr>",
+        desc = "Pick sessions",
+        mode = "n",
+      },
+      {
+        "<leader>qd",
+        "<cmd>SessionManager delete_session<cr>",
+        desc = "Delete sessions",
+        mode = "n",
+      },
+      {
+        "<leader>qs",
+        "<cmd>SessionManager save_current_session<cr>",
+        desc = "Save session",
+        mode = "n",
+      },
+    },
   },
 }
