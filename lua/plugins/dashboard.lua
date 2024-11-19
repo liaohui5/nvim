@@ -1,12 +1,13 @@
 return {
   "nvimdev/dashboard-nvim",
   event = "VimEnter",
+  enabled = true,
   opts = function(_, opts)
     ------------------------------------------------------------
     --- set the line-width and paddings of header and center-menus
     ------------------------------------------------------------
     local header_width = 55
-    local menus_width = 42
+    local menus_width = 45
     local header_pad_lines = 4
     local footer_pad_lines = 3
 
@@ -15,12 +16,12 @@ return {
     ------------------------------------------------------------
     local empty_line = string.rep(" ", header_width)
     local header = {
-      " ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗",
-      " ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║",
-      " ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║",
-      " ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║",
-      " ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
-      " ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
+      " ███╗   ██╗ ███████╗  ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗",
+      " ████╗  ██║ ██╔════╝ ██╔═══██╗ ██║   ██║ ██║ ████╗ ████║",
+      " ██╔██╗ ██║ █████╗   ██║   ██║ ██║   ██║ ██║ ██╔████╔██║",
+      " ██║╚██╗██║ ██╔══╝   ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║",
+      " ██║ ╚████║ ███████╗ ╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
+      " ╚═╝  ╚═══╝ ╚══════╝  ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
     }
     ---@diagnostic disable-next-line: unused-local
     for i = 1, header_pad_lines do
@@ -140,6 +141,7 @@ return {
     end
 
     return vim.tbl_deep_extend("force", opts, {
+      theme = "doom",
       config = {
         header = header,
         center = menu_items,
