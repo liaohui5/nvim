@@ -3,6 +3,7 @@ return {
   event = "VeryLazy",
   opts = {
     options = {
+      sort_by = "insert_at_end",
       always_show_bufferline = false,
       offsets = {
         {
@@ -12,6 +13,20 @@ return {
           text_align = "center", -- left, center, right
         },
       },
+    },
+  },
+  keys = {
+    {
+      "<leader>bH",
+      "<cmd>BufferLineMovePrev<cr>",
+      desc = "Move buffer to left",
+      mode = "n",
+    },
+    {
+      "<leader>bL",
+      "<cmd>BufferLineMoveNext<cr>",
+      desc = "Move buffer to right",
+      mode = "n",
     },
   },
 }
