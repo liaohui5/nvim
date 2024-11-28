@@ -41,7 +41,7 @@ end
 
 ---@class Option
 ---@field allow_values table
----@filed value string|bool
+---@filed value string|boolean
 
 -- create option and save to database
 ---@param key string
@@ -93,7 +93,8 @@ end
 
 -- create option, and switch option value
 ---@param key string
-function M.switch(key)
+---@param after_switch_callback? function(value)|nil
+function M.switch(key, after_switch_callback)
   if not M.has_option(key) then
     print("[switcher]not found option " .. key)
     return
@@ -116,13 +117,16 @@ function M.switch(key)
     option.value = choice
     print(string.format("[switcher]set %s option value to %s", key, choice))
     M.save()
+    if (type(after_switch_callback) == "function") then
+      after_switch_callback(M, choice)
+    end
   end)
 end
 
 ---@class CrateOptionItemFileds
 ---@field option_name string
 ---@field allow_values table
----@field default_value string|boolean
+---@field default_value? string|boolean
 
 ---@param options CrateOptionItemFileds
 function M.init_and_switch_option_value(options)
@@ -139,6 +143,7 @@ function M.init_and_switch_option_value(options)
   end
 
   local default_value = options.default_value or allow_values[1]
+  ---@diagnostic disable-next-line: param-type-mismatch
   M.new_option(key, allow_values, default_value)
   M.switch(key)
 end
