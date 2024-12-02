@@ -70,19 +70,14 @@
     "description": "import module default"
   },
   "Import Module": {
-    "prefix": "impo",
+    "prefix": "impp",
     "body": ["import {${0}} from \"${1}\";"],
-    "description": "import module"
+    "description": "import module partion"
   },
   "Import Vitest": {
     "prefix": "impv",
-    "body": ["import { describe, it, expect } from \"vitest\";"],
+    "body": ["import { describe, it, expect, beforeEach, vi } from \"vitest\";"],
     "description": "import vitest"
-  },
-  "Import Pinia For Unit Tests": {
-    "prefix": "impp",
-    "body": ["import { createPinia, setActivePinia } from \"pinia\";${0}"],
-    "description": "import pinia for unit tests"
   },
   "Import TypeScript Types": {
     "prefix": "impt",
