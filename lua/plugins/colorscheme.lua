@@ -1,39 +1,7 @@
 return {
   {
     "LazyVim/LazyVim",
-    opts = function()
-      local switcher = require("helpers.switcher")
-      local colorschemes = vim.fn.getcompletion("", "color")
-
-      -- if lazy is available, extend the colors list with unloaded colorschemes
-      local lazy = package.loaded["lazy.core.util"]
-      if lazy and lazy.get_unloaded_rtp then
-        local paths = lazy.get_unloaded_rtp("")
-        local all_files = vim.fn.globpath(table.concat(paths, ","), "colors/*", true, 1)
-        for _, f in ipairs(all_files) do
-          local color = vim.fn.fnamemodify(f, ":t:r")
-          if not vim.tbl_contains(colorschemes, color) then
-            table.insert(colorschemes, color)
-          end
-        end
-      end
-
-      switcher.new_option("colorscheme", colorschemes, "tokyonight-moon")
-      local value = switcher.get_value("colorscheme")
-      return { colorscheme = value }
-    end,
-    keys = {
-      {
-        "<leader>uS",
-        function()
-          require("helpers.switcher").switch("colorscheme", function(_, value)
-            vim.cmd.colorscheme(value)
-          end)
-        end,
-        desc = "Switch colorscheme forever",
-        mode = "n",
-      },
-    },
+    opts = { colorscheme = "tokyonight" },
   },
   {
     -- tokynight
