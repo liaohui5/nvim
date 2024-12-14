@@ -2,12 +2,6 @@
 -- because they make it impossible to stay focused
 -- https://www.lazyvim.org/plugins/ui
 return {
-  {
-    "folke/noice.nvim",
-    enabled = false,
-  },
-  {
-    "nvim-notify",
-    enabled = false,
-  },
+  "folke/noice.nvim",
+  enabled = false,
 }
