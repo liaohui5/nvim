@@ -9,6 +9,18 @@ return {
     notifier = {
       enabled = false,
     },
+    indent = {
+      enabled = true,
+      scope = {
+        enabled = false,
+      },
+      animate = {
+        enabled = false,
+      },
+    },
+    scroll = {
+      enabled = false,
+    },
     terminal = {
       win = {
         -- default position is bottom, like vscode terminal
