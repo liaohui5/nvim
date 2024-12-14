@@ -20,9 +20,10 @@ map("n", "<leader>rn", "<leader>cr", opts("Rename Symbol"))
 
 map("n", "<leader>fs", "<cmd>wa!<cr>", opts("Save", false))
 
-map("n", "<c-e>", "<leader>e", opts("Open file explorer"))
-
-map("n", "<c-g>", "<leader>gg", opts("Open lazygit"))
+-- lazygit
+if vim.fn.executable("lazygit") == 1 then
+  map("n", "<c-g>", "<leader>gg", opts("Open lazygit"))
+end
 
 map("n", "<c-q>", "<leader>qq", opts("Quit"))
 
@@ -59,6 +60,7 @@ map("n", "<leader>rs", function()
 end, opts("Restart LSP server", false))
 
 -- open tui file explorer, like yazi/joshuto/vifm/ranger
+-- map("n", "<c-e>", "<leader>e", opts("Open file explorer"))
 local file_manager = vim.g.terminal_file_manager
 if vim.fn.executable(file_manager) then
   local open_file_manager = function(open_path)
@@ -72,8 +74,8 @@ if vim.fn.executable(file_manager) then
     open_file_manager(vim.fn.expand("%:p:h"))
   end, opts("Open file manager"))
 
-  map("n", "<c-n>", function()
-    open_file_manager(LazyVim.root.get())
+  map("n", "<c-e>", function()
+    open_file_manager(LazyVim.root())
   end, opts("Open file manager(cwd)"))
 else
   print(string.format("Please install %s first", file_manager))

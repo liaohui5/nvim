@@ -9,16 +9,15 @@
 -----------------------------------------
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-vim.g.autoformat = true
-
--- can be use yazi, joshuto, vifm, ranger and so on
--- https://github.com/sxyazi/yazi
--- https://github.com/kamiyaa/joshuto
--- https://github.com/ranger/ranger
-vim.g.terminal_file_manager = "yazi"
-
--- default enabled auto save when lost focus
-vim.g.auto_save_on_lost_focus_enabled = true
+vim.g.autoformat = false
+vim.g.snacks_animate = false
+-- vim.g.lazyvim_picker = "auto"
+-- vim.g.lazyvim_cmp = "auto"
+-- vim.g.ai_cmp = true
+-- vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
+-- vim.g.root_lsp_ignore = { "copilot" }
+-- vim.g.deprecation_warnings = false
+-- vim.g.trouble_lualine = true
 
 -----------------------------------------
 -- neovim options
@@ -27,6 +26,15 @@ vim.opt.relativenumber = false
 vim.opt.conceallevel = 0
 vim.opt.spelllang = {}
 vim.opt.swapfile = false
+
+-----------------------------------------
+-- custom global settings
+-----------------------------------------
+-- can be use yazi, joshuto, vifm, ranger and so on
+-- https://github.com/sxyazi/yazi
+-- https://github.com/kamiyaa/joshuto
+-- https://github.com/ranger/ranger
+vim.g.terminal_file_manager = "yazi"
 
 -----------------------------------------
 -- disabled some language provider
