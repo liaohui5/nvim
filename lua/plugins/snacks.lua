@@ -10,11 +10,8 @@ return {
       enabled = false,
     },
     indent = {
-      enabled = false,
+      enabled = true,
       scope = {
-        enabled = false,
-      },
-      animate = {
         enabled = false,
       },
     },
