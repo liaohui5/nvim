@@ -10,7 +10,7 @@ return {
       enabled = false,
     },
     indent = {
-      enabled = true,
+      enabled = false,
       scope = {
         enabled = false,
       },
