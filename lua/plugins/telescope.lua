@@ -1,6 +1,8 @@
 return {
   "telescope.nvim",
   event = "VeryLazy",
+  -- use default fzf-lua in lazyvim v14.x
+  enabled = false,
   keys = {
     { "<leader>ff", false },
   },
