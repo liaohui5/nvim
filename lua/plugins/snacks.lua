@@ -96,22 +96,7 @@ return {
       sections = {
         { section = "header", padding = 4 },
         { section = "keys", gap = 1, padding = 4 },
-
-        -- startup infomations
-        function(dashboard)
-          dashboard.stats = dashboard.stats and dashboard.stats.startuptime > 0 or require("lazy.stats").stats()
-          local loaded_plugins = dashboard.stats.loaded .. "/" .. dashboard.stats.count
-          local load_used_tims = (math.floor(dashboard.stats.startuptime * 100 + 0.5) / 100) .. "ms"
-          return {
-            align = "center",
-            text = {
-              { "🚀 neovim loaded ", hl = "footer" },
-              { loaded_plugins, hl = "special" },
-              { " packages in ", hl = "footer" },
-              { load_used_tims, hl = "special" },
-            },
-          }
-        end,
+        { section = "startup", icon = "🚀 ", gap = 1 },
       },
     },
   },
