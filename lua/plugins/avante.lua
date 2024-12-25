@@ -19,6 +19,7 @@ return {
     event = "VeryLazy",
     lazy = false,
     version = false,
+    enabled = false,
     build = "make",
     dependencies = {
       "stevearc/dressing.nvim",
