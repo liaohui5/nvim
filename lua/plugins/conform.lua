@@ -44,8 +44,7 @@ return {
       -- dprint rules: https://dprint.dev/plugins/
       opts.formatters.dprint = {
         condition = function(ctx)
-          -- if dprint.json exists
-          return vim.fs.find({ "dprint.json", ".dprint.json" }, { path = ctx.filename, upward = true })[1]
+          return vim.fs.find({ "dprint.json" }, { path = ctx.filename, upward = true })[1]
         end,
       }
     end,
