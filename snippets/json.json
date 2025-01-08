@@ -1,5 +1,5 @@
 {
-	"biome config generator": {
+	"Biome Config Generator": {
 		"prefix": "biomeconfig",
 		"body": [
 			"{",
@@ -13,10 +13,13 @@
 			"    \"lineEnding\": \"lf\",",
 			"    \"lineWidth\": 120",
 			"  },",
+			"  \"organizeImports\": {",
+			"    \"enabled\": false",
+			"  },",
 			"  \"javascript\": {",
 			"    \"formatter\": {",
-			"      \"arrowParentheses\":\"always\",",
-			"      \"bracketSameLine\": false,",
+			"      \"arrowParentheses\": \"always\",",
+			"      \"bracketSameLine\": true,",
 			"      \"bracketSpacing\": true,",
 			"      \"jsxQuoteStyle\": \"double\",",
 			"      \"quoteProperties\": \"asNeeded\",",
@@ -29,8 +32,10 @@
 			"      \"trailingCommas\": \"none\"",
 			"    }",
 			"  }",
-			"}"
+			"}",
+			"",
+			""
 		],
-		"description": "biome config generator"
+		"description": "Biome Config Generator"
 	}
 }

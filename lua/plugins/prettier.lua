@@ -11,7 +11,7 @@ local supported = {
   "markdown",
   "markdown.mdx",
   "yaml",
-  "jsonc",
+  -- "jsonc",
 }
 
 return {
