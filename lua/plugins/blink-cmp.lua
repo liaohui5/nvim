@@ -6,6 +6,14 @@ return {
   "saghen/blink.cmp",
   enabled = true,
   opts = {
+    completion = {
+      keyword = {
+        range = "prefix",
+      },
+      trigger = {
+        show_on_trigger_character = true,
+      },
+    },
     keymap = {
       ["<c-o>"] = { "show", "show_documentation", "hide_documentation" },
       ["<c-e>"] = { "cancel", "fallback" },
