@@ -1,6 +1,5 @@
 return {
   {
-    -- dependencies
     "folke/which-key.nvim",
     opts = {
       spec = {

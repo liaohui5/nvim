@@ -79,26 +79,4 @@ return {
       { "gA", mode = "v", desc = "align by string with preview" },
     },
   },
-  -- {
-  --   "echasnovski/mini.files",
-  --   event = "VeryLazy",
-  --   opts = {
-  --     options = {
-  --       -- Whether to use for editing directories
-  --       -- Disabled by default in LazyVim because neo-tree is used for that
-  --       use_as_default_explorer = false,
-  --     },
-  --     mappings = {
-  --       close = "<c-q>",
-  --     },
-  --   },
-  --   keys = {
-  --     {
-  --       "<c-f>",
-  --       "<leader>fm",
-  --       remap = true,
-  --       noremap = true,
-  --     },
-  --   },
-  -- },
 }

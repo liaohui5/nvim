@@ -1,41 +1,18 @@
 {
-	"Biome Config Generator": {
-		"prefix": "biomeconfig",
+	"prettierconfig": {
+		"prefix": "prettierconfig",
 		"body": [
 			"{",
-			"  \"formatter\": {",
-			"    \"enabled\": true,",
-			"    \"formatWithErrors\": false,",
-			"    \"ignore\": [],",
-			"    \"attributePosition\": \"auto\",",
-			"    \"indentStyle\": \"space\",",
-			"    \"indentWidth\": 2,",
-			"    \"lineEnding\": \"lf\",",
-			"    \"lineWidth\": 120",
-			"  },",
-			"  \"organizeImports\": {",
-			"    \"enabled\": false",
-			"  },",
-			"  \"javascript\": {",
-			"    \"formatter\": {",
-			"      \"arrowParentheses\": \"always\",",
-			"      \"bracketSameLine\": true,",
-			"      \"bracketSpacing\": true,",
-			"      \"jsxQuoteStyle\": \"double\",",
-			"      \"quoteProperties\": \"asNeeded\",",
-			"      \"semicolons\": \"always\",",
-			"      \"trailingCommas\": \"all\"",
-			"    }",
-			"  },",
-			"  \"json\": {",
-			"    \"formatter\": {",
-			"      \"trailingCommas\": \"none\"",
-			"    }",
-			"  }",
-			"}",
-			"",
-			""
+			"  \"printWidth\": 120,",
+			"  \"tabWidth\": 2,",
+			"  \"useTabs\": false,",
+			"  \"semi\": true,",
+			"  \"singleQuote\": true,",
+			"  \"trailingCommas\": \"all\",",
+			"  \"bracketSpacing\": true,",
+			"  \"alwaysParens\": true,",
+			"}"
 		],
-		"description": "Biome Config Generator"
+		"description": "prettierconfig"
 	}
 }

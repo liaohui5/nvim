@@ -17,32 +17,32 @@ return {
         with_markers = true,
       },
     },
-    event_handlers = {
-      {
-        -- open buffer when file created
-        event = "file_added",
-        handler = function(filepath)
-          if vim.fn.filereadable(filepath) == 1 then
-            vim.cmd("silent edit " .. filepath)
-          end
-        end,
-      },
-      {
-        -- close buffer when file deleted
-        event = "file_deleted",
-        handler = function(filepath)
-          local buf_ids = vim.api.nvim_list_bufs()
-          local close_buf_cmd = "bdelete "
-          for _, id in ipairs(buf_ids) do
-            local buf_path = vim.fn.expand(vim.api.nvim_buf_get_name(id))
-            if buf_path == filepath then
-              close_buf_cmd = string.format(" %s %s", close_buf_cmd, id)
-            end
-          end
-          vim.cmd(close_buf_cmd)
-        end,
-      },
-    },
+    -- event_handlers = {
+    --   {
+    --     -- open buffer when file created
+    --     event = "file_added",
+    --     handler = function(filepath)
+    --       if vim.fn.filereadable(filepath) == 1 then
+    --         vim.cmd("silent edit " .. filepath)
+    --       end
+    --     end,
+    --   },
+    --   {
+    --     -- close buffer when file deleted
+    --     event = "file_deleted",
+    --     handler = function(filepath)
+    --       local buf_ids = vim.api.nvim_list_bufs()
+    --       local close_buf_cmd = "bdelete "
+    --       for _, id in ipairs(buf_ids) do
+    --         local buf_path = vim.fn.expand(vim.api.nvim_buf_get_name(id))
+    --         if buf_path == filepath then
+    --           close_buf_cmd = string.format(" %s %s", close_buf_cmd, id)
+    --         end
+    --       end
+    --       vim.cmd(close_buf_cmd)
+    --     end,
+    --   },
+    -- },
     filesystem = {
       filtered_items = {
         -- display all files
