@@ -1,18 +1,18 @@
 {
-	"prettierconfig": {
-		"prefix": "prettierconfig",
-		"body": [
-			"{",
-			"  \"printWidth\": 120,",
-			"  \"tabWidth\": 2,",
-			"  \"useTabs\": false,",
-			"  \"semi\": true,",
-			"  \"singleQuote\": true,",
-			"  \"trailingCommas\": \"all\",",
-			"  \"bracketSpacing\": true,",
-			"  \"alwaysParens\": true,",
-			"}"
-		],
-		"description": "prettierconfig"
-	}
+  "prettierconfig": {
+    "prefix": "prettierconfig",
+    "body": [
+      "{",
+      "  \"printWidth\": 120,",
+      "  \"tabWidth\": 2,",
+      "  \"useTabs\": false,",
+      "  \"semi\": true,",
+      "  \"singleQuote\": false,",
+      "  \"trailingCommas\": \"all\",",
+      "  \"bracketSpacing\": true,",
+      "  \"alwaysParens\": true",
+      "}"
+    ],
+    "description": "prettierconfig"
+  }
 }
