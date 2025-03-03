@@ -19,7 +19,7 @@ return {
     event = "VeryLazy",
     lazy = false,
     version = false,
-    enabled = false,
+    enabled = true,
     build = "make",
     dependencies = {
       "stevearc/dressing.nvim",
@@ -31,18 +31,19 @@ return {
         opts = {
           file_types = { "Avante" },
         },
-        ft = { "markdown", "Avante" },
+        ft = { "Avante" },
       },
     },
     opts = {
-      provider = "openai",
-      auto_suggestions_provider = "openai",
-      openai = {
-        endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
-        model = "qwen2.5-coder-3b-instruct",
-        timeout = 30000, -- timeout in ms
-        temperature = 0,
-        max_tokens = 4096,
+      provider = "qwen",
+      vendors = {
+        qwen = {
+          __inherited_from = "openai",
+          api_key_name = "ALIYUNCS_API_KEY",
+          endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          model = "qwen2.5-coder-1.5b-instruct",
+          -- qwen2.5-coder-3b-instruct qwen2.5-coder-1.5b-instruct qwen2.5-coder-0.5b-instruct
+        },
       },
     },
   },
