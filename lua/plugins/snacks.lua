@@ -4,7 +4,7 @@ return {
   lazy = false,
   opts = {
     words = {
-      enabled = false,
+      enabled = true,
     },
     notifier = {
       enabled = false,
@@ -39,13 +39,15 @@ return {
             icon = "",
             key = "l",
             desc = "Restore last session",
-            action = ":lua require('persistence').load({ last = true })",
+            -- action = ":lua require('persistence').load({ last = true })",
+            action = ":SessionManager load_last_session",
           },
           {
             icon = "",
             key = "p",
             desc = "Pick sessions",
-            action = ":lua require('persistence').select()",
+            -- action = ":lua require('persistence').select()",
+            action = ":SessionManager load_session",
           },
           {
             icon = "",
