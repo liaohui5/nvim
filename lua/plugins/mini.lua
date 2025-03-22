@@ -68,6 +68,8 @@ return {
   },
   {
     "echasnovski/mini.align",
+    enabled = true,
+    vscode = true,
     opts = {
       mappings = {
         start = "ga",

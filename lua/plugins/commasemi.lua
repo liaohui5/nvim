@@ -7,16 +7,16 @@ return {
   },
   keys = {
     {
-      "<leader>,",
+      "gb",
       "<cmd>CommaToggle<cr>",
       desc = "Toggle comma",
-      mode = { "n", "v" },
+      mode = "n",
     },
     {
-      "<leader>;",
+      "gB",
       "<cmd>SemiToggle<cr>",
       desc = "Toggle semi",
-      mode = { "n", "v" },
+      mode = "n",
     },
   },
 }

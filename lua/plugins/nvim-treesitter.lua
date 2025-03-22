@@ -51,6 +51,7 @@ return {
     "ckolkey/ts-node-action",
     dependencies = { "nvim-treesitter" },
     event = "VeryLazy",
+    vscode = true,
     keys = {
       {
         "ga",
@@ -67,6 +68,7 @@ return {
     "Wansmer/treesj",
     dependencies = { "nvim-treesitter" },
     event = "VeryLazy",
+    vscode = true,
     keys = {
       {
         "gS",
