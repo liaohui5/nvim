@@ -1,6 +1,7 @@
 return {
   "saifulapm/commasemi.nvim",
   lazy = false,
+  vscode = true,
   opts = {
     keymaps = false,
     commands = true,
