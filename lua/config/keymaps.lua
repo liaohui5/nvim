@@ -11,9 +11,6 @@ local function opts(desc, remap, noremap)
   }
 end
 
--- better move to end of line
-map({ "n", "v" }, "$", "$h", opts("End of line"))
-
 -- format
 map({ "n", "v" }, "<leader>ff", "<leader>cf", opts("Format Document", false))
 
