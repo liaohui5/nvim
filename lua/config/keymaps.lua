@@ -23,8 +23,6 @@ if vim.fn.executable("lazygit") == 1 then
   map("n", "<c-g>", "<leader>gg", opts("Open lazygit"))
 end
 
-map("n", "<c-q>", "<leader>qq", opts("Quit"))
-
 map("n", "<c-e>", "<leader>e", opts("Open file explorer"))
 
 map("n", "<c-p>", "<leader><leader>", opts("Find files"))

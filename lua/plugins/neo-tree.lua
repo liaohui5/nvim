@@ -67,6 +67,14 @@ return {
       end)
     end
 
+    -- copy file relative path to clipboard
+    local function copy_relative_path(state)
+      local node = state.tree:get_node()
+      local absolute_path = node:get_id()
+      local relative_path = vim.fn.fnamemodify(absolute_path, ":.")
+      vim.fn.setreg("+", relative_path, "c")
+    end
+
     return vim.tbl_deep_extend("force", opts, {
       event_handlers = event_handlers,
       close_if_last_window = true,
@@ -93,7 +101,7 @@ return {
             -- `:h neo-tree-mappings` show more default keybindings
             ["d"] = "cut_to_clipboard",
             ["o"] = "open",
-            ["<c-o>"] = {
+            ["<c-enter>"] = {
               nowait = true,
               desc = "open file in Finder",
               command = open_in_finder,
@@ -102,6 +110,11 @@ return {
               nowait = true,
               desc = "move file to trash",
               command = soft_delete,
+            },
+            ["<c-y>"] = {
+              nowait = true,
+              command = copy_relative_path,
+              desc = "Copy Reltive Path to Clipboard",
             },
           },
         },
