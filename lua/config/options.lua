@@ -36,6 +36,9 @@ vim.opt.swapfile = false
 -- https://github.com/ranger/ranger
 vim.g.terminal_file_manager = "yazi"
 
+-- enabled auto completion
+vim.g.enabled_auto_completion = true
+
 -----------------------------------------
 -- disabled some language provider
 -----------------------------------------
