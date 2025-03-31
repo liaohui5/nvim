@@ -4,13 +4,11 @@
 -------------------------------------------------------------------
 return {
   {
-    {
-      "folke/which-key.nvim",
-      optional = true,
-      opts = {
-        spec = {
-          { "<leader>a", group = "ai helper" },
-        },
+    "folke/which-key.nvim",
+    optional = true,
+    opts = {
+      spec = {
+        { "<leader>a", group = "ai helper" },
       },
     },
   },
