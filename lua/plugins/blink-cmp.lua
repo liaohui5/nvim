@@ -17,6 +17,7 @@ return {
   {
     "saghen/blink.cmp",
     enabled = true,
+    lazy = "VeryLazy",
     opts = {
       completion = {
         keyword = {

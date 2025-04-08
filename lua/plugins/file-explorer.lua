@@ -137,7 +137,7 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     version = "*",
-    lazy = false,
+    lazy = "VeryLazy",
     enabled = true,
     event = "VeryLazy",
     dependencies = {
@@ -174,7 +174,7 @@ return {
         keyset("n", "Y",         api.fs.copy.absolute_path,        keyopts("Copy Absolute Path"))
         keyset("n", "y",         api.fs.copy.filename,             keyopts("Copy Name"))
         keyset("n", "<c-y>",     api.fs.copy.relative_path,        keyopts("Copy Relative Path"))
-        keyset("n", "L",         api.node.open.toggle_group_empty, keyopts("Toggle Group Empty"))
+        keyset("n", "l",         api.node.open.edit,               keyopts("Open"))
         keyset("n", "o",         api.node.open.edit,               keyopts("Open"))
         keyset("n", "O",         api.node.open.no_window_picker,   keyopts("Open: No Window Picker"))
         keyset("n", "p",         api.fs.paste,                     keyopts("Paste"))
