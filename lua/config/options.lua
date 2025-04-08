@@ -40,8 +40,10 @@ vim.g.terminal_file_manager = "yazi"
 vim.g.enabled_auto_completion = true
 
 -----------------------------------------
--- disabled some language provider
+-- disabled default modules
 -----------------------------------------
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 local disabled_providers = {
   -- "node",
   -- "python3",

@@ -72,13 +72,13 @@ return {
     vscode = true,
     opts = {
       mappings = {
-        start = "ga",
-        start_with_preview = "gA",
+        start = "gA",
+        start_with_preview = "ga",
       },
     },
     keys = {
-      { "ga", mode = "v", desc = "align by string" },
-      { "gA", mode = "v", desc = "align by string with preview" },
+      { "gA", mode = "v", desc = "align by string" },
+      { "ga", mode = "v", desc = "align by string with preview" },
     },
   },
 }
