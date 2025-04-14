@@ -159,6 +159,7 @@ return {
         -- https://github1s.com/nvim-tree/nvim-tree.lua/blob/master/lua/nvim-tree/keymap.lua
         -- stylua: ignore start
         keyset("n", "<c-e>",     "<cmd>NvimTreeToggle<cr>",        keyopts("Toggle NvimTree"))
+        keyset("n", "=",         api.tree.change_root_to_node,     keyopts("CD"))
         keyset("n", "/",         api.node.show_info_popup,         keyopts("Info"))
         keyset("n", "<c-v>",     api.node.open.vertical,           keyopts("Open: Vertical Split"))
         keyset("n", "<c-x>",     api.node.open.horizontal,         keyopts("Open: Horizontal Split"))
@@ -168,24 +169,24 @@ return {
         keyset("n", ".",         api.node.run.cmd,                 keyopts("Run Command"))
         keyset("n", "a",         api.fs.create,                    keyopts("Create File Or Directory"))
         keyset("n", "y",         api.fs.copy.node,                 keyopts("Copy"))
+        keyset("n", "d",         api.fs.cut,                       keyopts("Cut"))
         keyset("n", "x",         api.fs.trash,                     keyopts("Trash"))
         keyset("n", "<shift-x>", api.fs.remove,                    keyopts("Delete"))
         keyset("n", "?",         api.tree.toggle_help,             keyopts("Help"))
-        keyset("n", "Y",         api.fs.copy.absolute_path,        keyopts("Copy Absolute Path"))
+        keyset("n", "<shift-y>", api.fs.copy.absolute_path,        keyopts("Copy Absolute Path"))
         keyset("n", "y",         api.fs.copy.filename,             keyopts("Copy Name"))
         keyset("n", "<c-y>",     api.fs.copy.relative_path,        keyopts("Copy Relative Path"))
         keyset("n", "l",         api.node.open.edit,               keyopts("Open"))
         keyset("n", "o",         api.node.open.edit,               keyopts("Open"))
-        keyset("n", "O",         api.node.open.no_window_picker,   keyopts("Open: No Window Picker"))
+        keyset("n", "<shift-o>", api.node.open.no_window_picker,   keyopts("Open: No Window Picker"))
         keyset("n", "p",         api.fs.paste,                     keyopts("Paste"))
         keyset("n", "q",         api.tree.close,                   keyopts("Close"))
         keyset("n", "u",         api.fs.rename_full,               keyopts("Rename: Full Path"))
         keyset("n", "r",         api.fs.rename,                    keyopts("Rename"))
         keyset("n", "<c-r>",     api.fs.rename_sub,                keyopts("Rename: Omit Filename"))
-        keyset("n", "R",         api.tree.reload,                  keyopts("Refresh"))
+        keyset("n", "<shift-r>", api.tree.reload,                  keyopts("Refresh"))
         keyset("n", "<c-enter>", api.node.run.system,              keyopts("Run System"))
-        keyset("n", "W",         api.tree.collapse_all,            keyopts("Collapse"))
-        keyset("n", "d",         api.fs.cut,                       keyopts("Cut"))
+        keyset("n", "<shift-w>", api.tree.collapse_all,            keyopts("Collapse"))
         -- stylua: ignore end
       end
       local options = vim.tbl_deep_extend("force", opts, {
@@ -199,6 +200,7 @@ return {
           width = 32,
         },
         renderer = {
+          root_folder_label = false, -- hide root folder
           decorators = { "Open", "Hidden", "Bookmark", "Diagnostics", "Copied", "Cut" },
           indent_markers = {
             enable = true,
