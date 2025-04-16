@@ -25,7 +25,7 @@ end
 
 map("n", "<c-q>", "<leader>qq", opts("Exit"))
 
-map("n", "<c-p>", "<leader><leader>", opts("Find files"))
+map("n", "<c-p>", "<leader>fg", opts("Find files"))
 
 map("n", "<c-u>", "5kzz", opts("Scroll up"))
 
