@@ -11,7 +11,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.autoformat = false
 vim.g.snacks_animate = false
--- vim.g.lazyvim_picker = "auto"
+vim.g.lazyvim_picker = "fzf"
 -- vim.g.lazyvim_cmp = "auto"
 -- vim.g.ai_cmp = true
 -- vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
@@ -34,10 +34,8 @@ vim.opt.swapfile = false
 -- https://github.com/sxyazi/yazi
 -- https://github.com/kamiyaa/joshuto
 -- https://github.com/ranger/ranger
+-- https://github.com/vifm/vifm
 vim.g.terminal_file_manager = "yazi"
-
--- enabled auto completion
-vim.g.enabled_auto_completion = true
 
 -----------------------------------------
 -- disabled default modules
