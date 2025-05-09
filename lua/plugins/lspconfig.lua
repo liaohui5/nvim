@@ -3,7 +3,12 @@ return {
   event = "VeryLazy",
   opts = function(_, opts)
     local keys = require("lazyvim.plugins.lsp.keymaps").get()
-    keys[#keys + 1] = { "<c-k>", false } -- disabled <c-k>
+
+    -- disabled default keymaps ctrl+k
+    keys[#keys + 1] = {
+      "<c-k>",
+      false,
+    }
 
     return vim.tbl_deep_extend("force", opts, {
       inlay_hints = {
