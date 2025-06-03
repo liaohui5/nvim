@@ -174,7 +174,6 @@ return {
         keyset("n", "<shift-x>", api.fs.remove,                    keyopts("Delete"))
         keyset("n", "?",         api.tree.toggle_help,             keyopts("Help"))
         keyset("n", "<shift-y>", api.fs.copy.absolute_path,        keyopts("Copy Absolute Path"))
-        keyset("n", "y",         api.fs.copy.filename,             keyopts("Copy Name"))
         keyset("n", "<c-y>",     api.fs.copy.relative_path,        keyopts("Copy Relative Path"))
         keyset("n", "l",         api.node.open.edit,               keyopts("Open"))
         keyset("n", "o",         api.node.open.edit,               keyopts("Open"))
