@@ -10,7 +10,7 @@ return {
       local sessions_path = Path:new(vim.fn.stdpath("state"), "sessions")
       return vim.tbl_deep_extend("force", opts, {
         sessions_dir = sessions_path,
-        autoload_mode = autoload_mode.Disabled, -- Disabled, CurrentDir, LastSession
+        autoload_mode = autoload_mode.CurrentDir, -- Disabled, CurrentDir, LastSession
         autosave_last_session = true,
         autosave_ignore_not_normal = true,
         autosave_only_in_session = true,
