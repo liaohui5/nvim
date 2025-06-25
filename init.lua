@@ -22,41 +22,17 @@ require("config.lazy")
 -- load local plugin development environment example
 -----------------------------------------------------------------------------------
 
--- vim.opt.runtimepath:append("$HOME/codes/persistence.nvim")
--- local plugin = require("persistence")
+-- vim.opt.runtimepath:append("$HOME/codes/example.nvim")
+-- local plugin = require("example")
 -- plugin.setup({})
 --
 -- local keys = {
 --   {
---     lhs = "<leader>qp",
+--     lhs = "<leader>s1",
 --     rhs = function()
---       require("persistence").select()
+--       require("example").handler1()
 --     end,
---     desc = "Pick sessions",
---     mode = "n",
---   },
---   {
---     lhs = "<leader>ql",
---     rhs = function()
---       require("persistence").load({ last = true })
---     end,
---     desc = "Load last session",
---     mode = "n",
---   },
---   {
---     lhs = "<leader>qd",
---     rhs = function()
---       require("persistence").delete()
---     end,
---     desc = "Delete sessions",
---     mode = "n",
---   },
---   {
---     lhs = "<leader>qs",
---     rhs = function()
---       require("persistence").save()
---     end,
---     desc = "Save session",
+--     desc = "execute handler1 function",
 --     mode = "n",
 --   },
 -- }

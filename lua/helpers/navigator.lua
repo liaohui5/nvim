@@ -2,7 +2,7 @@ local M = {}
 
 ---@class Link
 ---@field link string: text of link
----@field lnum number: line number
+---@field index number: line number
 ---@field first number: start column
 ---@field last number: last column
 
@@ -11,8 +11,8 @@ local function find_links(lines)
   local URL_PATTERN =
     "\\v\\c%(%(h?ttps?|ftp|file|ssh|git)://|[a-z]+[@][a-z]+[.][a-z]+:)%([&:#*@~%_\\-=?!+;/0-9a-z]+%(%([.;/?]|[.][.]+)[&:#*@~%_\\-=?!+/0-9a-z]+|:\\d+|,%(%(%(h?ttps?|ftp|file|ssh|git)://|[a-z]+[@][a-z]+[.][a-z]+:)@![0-9a-z]+))*|\\([&:#*@~%_\\-=?!+;/.0-9a-z]*\\)|\\[[&:#*@~%_\\-=?!+;/.0-9a-z]*\\]|\\{%([&:#*@~%_\\-=?!+;/.0-9a-z]*|\\{[&:#*@~%_\\-=?!+;/.0-9a-z]*\\})\\})+"
   ---@type Link[]
-  local ret = {}
-  for lnum, line in ipairs(lines) do
+  local links = {}
+  for index, line in ipairs(lines) do
     local link = ""
     local last = 0
     local first = 0
@@ -22,10 +22,10 @@ local function find_links(lines)
       if link == "" then
         break
       end
-      table.insert(ret, { link = link, lnum = lnum, first = first, last = last })
+      table.insert(links, { link = link, index = index, first = first, last = last })
     end
   end
-  return ret
+  return links
 end
 
 -- find and open current line url in default browser
@@ -54,6 +54,20 @@ function M.open_current_line_url()
   else
     print("WARN:not found url in current line")
   end
+end
+
+function M.open_buffer_urls()
+  local links = find_links(vim.api.nvim_buf_get_lines(0, 0, -1, false))
+  vim.ui.select(links, {
+    prompt = "Open link",
+    format_item = function(item)
+      return item.link
+    end,
+  }, function(choice)
+    if choice then
+      M.open_in_browser(choice.link)
+    end
+  end)
 end
 
 -- open url in default browser

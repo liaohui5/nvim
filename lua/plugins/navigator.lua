@@ -23,7 +23,7 @@ return {
         },
         {
           "<leader>oU",
-          "<cmd>VisitLinkInBuffer<cr>",
+          navigator.open_buffer_urls,
           desc = "Open buffer urls in browser",
           mode = "n",
         },
