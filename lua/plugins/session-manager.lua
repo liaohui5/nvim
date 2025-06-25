@@ -1,7 +1,38 @@
 return {
-  { "persistence.nvim", enabled = false },
   {
-    -- use neovim session manager replace persistence
+    -- TODO: use folke/persistence.nvim when pr(99) merged
+    "liaohui5/persistence.nvim",
+    event = "VeryLazy",
+    enabled = true,
+    keys = {
+      {
+        "<leader>ql",
+        function()
+          require("persistence").select()
+        end,
+        desc = "Pick sessions to load",
+        mode = "n",
+      },
+      {
+        "<leader>qd",
+        function()
+          require("persistence").delete()
+        end,
+        desc = "Delete session",
+        mode = "n",
+      },
+      {
+        "<leader>qs",
+        function()
+          require("persistence").save()
+        end,
+        desc = "Save session",
+        mode = "n",
+      },
+    },
+  },
+  {
+    enabled = false,
     "Shatur/neovim-session-manager",
     event = "VeryLazy",
     opts = function(_, opts)
@@ -24,13 +55,13 @@ return {
       {
         "<leader>ql",
         "<cmd>SessionManager load_session<cr>",
-        desc = "Pick sessions",
+        desc = "Pick session",
         mode = "n",
       },
       {
         "<leader>qd",
         "<cmd>SessionManager delete_session<cr>",
-        desc = "Delete sessions",
+        desc = "Delete session",
         mode = "n",
       },
       {
