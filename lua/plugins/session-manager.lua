@@ -1,6 +1,7 @@
 return {
   {
-    -- TODO: use folke/persistence.nvim when pr(99) merged
+    -- TODO: use folke/persistence.nvim when pr merged
+    -- https://github.com/folke/persistence.nvim/pull/99
     "liaohui5/persistence.nvim",
     event = "VeryLazy",
     enabled = true,
@@ -10,7 +11,7 @@ return {
         function()
           require("persistence").select()
         end,
-        desc = "Pick sessions to load",
+        desc = "Load session",
         mode = "n",
       },
       {
@@ -55,7 +56,7 @@ return {
       {
         "<leader>ql",
         "<cmd>SessionManager load_session<cr>",
-        desc = "Pick session",
+        desc = "Load session",
         mode = "n",
       },
       {
