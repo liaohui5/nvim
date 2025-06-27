@@ -16,17 +16,17 @@ return {
           },
           {
             icon = "",
-            key = "l",
+            key = "r",
             desc = "Restore last session",
-            action = ":lua require('persistence').load({ last = true })",
-            -- action = ":SessionManager load_last_session",
+            -- action = ":lua require('persistence').load({ last = true })",
+            action = ":SessionManager load_last_session",
           },
           {
             icon = "",
-            key = "p",
-            desc = "Pick sessions",
-            action = ":lua require('persistence').select()",
-            -- action = ":SessionManager load_session",
+            key = "l",
+            desc = "Load session",
+            -- action = ":lua require('persistence').select()",
+            action = ":SessionManager load_session",
           },
           {
             icon = "",
@@ -49,7 +49,7 @@ return {
           {
             icon = "",
             desc = "Lazyvim plugins",
-            key = "P",
+            key = "p",
             action = ":Lazy",
             enabled = package.loaded.lazy ~= nil,
           },
@@ -58,6 +58,7 @@ return {
             key = "e",
             desc = "Lazyvim extras",
             action = ":LazyExtras",
+            enabled = package.loaded.lazy ~= nil,
           },
           {
             icon = "",
