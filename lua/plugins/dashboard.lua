@@ -41,7 +41,7 @@ return {
             action = ":lua Snacks.dashboard.pick('oldfiles')",
           },
           {
-            icon = "",
+            icon = "",
             key = "c",
             desc = "Configurations",
             action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
