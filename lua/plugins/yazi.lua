@@ -8,17 +8,16 @@ return {
     {
       "<c-f>",
       "<cmd>Yazi<cr>",
+      mode = "n",
+      noremap = true,
       desc = "Open yazi file manager",
     },
     {
       "<c-n>",
       "<cmd>Yazi cwd<cr>",
+      mode = "n",
+      noremap = true,
       desc = "Open yazi file manager(Root)",
-    },
-    {
-      "<c-up>",
-      "<cmd>Yazi toggle<cr>",
-      desc = "Resume the last yazi session",
     },
   },
   opts = {
