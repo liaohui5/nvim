@@ -11,13 +11,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.autoformat = false
 vim.g.snacks_animate = false
-vim.g.lazyvim_picker = "fzf"
--- vim.g.lazyvim_cmp = "auto"
--- vim.g.ai_cmp = true
--- vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
--- vim.g.root_lsp_ignore = { "copilot" }
--- vim.g.deprecation_warnings = false
--- vim.g.trouble_lualine = true
+vim.g.lazyvim_picker = "auto"
 
 -----------------------------------------
 -- neovim options
