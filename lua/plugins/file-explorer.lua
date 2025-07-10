@@ -233,4 +233,26 @@ return {
       },
     },
   },
+  -- {
+  --   "folke/snacks.nvim",
+  --   ---@type snacks.Config
+  --   opts = {
+  --     explorer = {
+  --       replace_netrw = true,
+  --       -- your explorer configuration comes here
+  --       -- or leave it empty to use the default settings
+  --       -- refer to the configuration section below
+  --     },
+  --   },
+  --   keys = {
+  --     {
+  --       "<c-e>",
+  --       function()
+  --         Snacks.explorer()
+  --       end,
+  --       mode = "n",
+  --       desc = "Toggle Explorer",
+  --     },
+  --   },
+  -- },
 }
