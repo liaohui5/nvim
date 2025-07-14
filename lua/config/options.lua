@@ -12,6 +12,7 @@ vim.g.maplocalleader = "\\"
 vim.g.autoformat = false
 vim.g.snacks_animate = false
 vim.g.lazyvim_picker = "auto"
+vim.g.trouble_lualine = false
 
 -----------------------------------------
 -- neovim options
