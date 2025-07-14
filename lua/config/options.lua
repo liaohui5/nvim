@@ -11,7 +11,6 @@ vim.g.autoformat = false
 vim.g.snacks_animate = false
 vim.g.lazyvim_picker = "auto"
 vim.g.trouble_lualine = false
-vim.g.ai_cmp = true
 
 -----------------------------------------
 -- neovim options

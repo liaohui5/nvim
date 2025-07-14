@@ -46,6 +46,7 @@ return {
             name = "blink-cmp-words",
             module = "blink-cmp-words.dictionary",
             opts = {
+              score_offset = 10,
               dictionary_search_threshold = 3,
               pointer_symbols = { "!", "&", "^" },
             },
@@ -54,6 +55,7 @@ return {
             name = "blink-cmp-words",
             module = "blink-cmp-words.thesaurus",
             opts = {
+              score_offset = 10,
               pointer_symbols = { "!", "&", "^" },
             },
           },
