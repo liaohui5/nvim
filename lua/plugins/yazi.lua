@@ -29,7 +29,7 @@ return {
       open_file_in_vertical_split = "<c-x>",
       open_file_in_horizontal_split = "<c-v>",
       send_to_quickfix_list = "<c-s>",
-      -- must be install `grealpath` first on macOS(brew install coreutils)
+      -- must be install `grealpath` first(macOS: brew install coreutils)
       copy_relative_path_to_selected_files = "<c-y>",
       open_file_in_tab = false,
       grep_in_directory = false,

@@ -1,9 +1,7 @@
--------------------------------------------------------------------------------------------------------
 -- Neovim base options
 -- LazyVim default options: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- online chinese docs    : https://yianwillis.github.io/vimcdoc/doc/help.html
 -- Options are automatically loaded before lazy.nvim startup
--------------------------------------------------------------------------------------------------------
 -----------------------------------------
 -- lazyvim global settings
 -----------------------------------------
@@ -13,6 +11,7 @@ vim.g.autoformat = false
 vim.g.snacks_animate = false
 vim.g.lazyvim_picker = "auto"
 vim.g.trouble_lualine = false
+vim.g.ai_cmp = true
 
 -----------------------------------------
 -- neovim options
@@ -21,16 +20,6 @@ vim.opt.relativenumber = false
 vim.opt.conceallevel = 0
 vim.opt.spelllang = {}
 vim.opt.swapfile = false
-
------------------------------------------
--- custom global settings
------------------------------------------
--- can be use yazi, joshuto, vifm, ranger and so on
--- https://github.com/sxyazi/yazi
--- https://github.com/kamiyaa/joshuto
--- https://github.com/ranger/ranger
--- https://github.com/vifm/vifm
-vim.g.terminal_file_manager = "yazi"
 
 -----------------------------------------
 -- disabled default modules
