@@ -34,23 +34,3 @@ map({ "n", "t" }, "<c-x>", "<c-_>", opts("Open terminal"))
 map({ "t", "c" }, "<c-h>", "<Left>", opts("Move left"))
 
 map({ "t", "c" }, "<c-l>", "<Right>", opts("Move right"))
-
--- restart lsp server
-map("n", "<leader>rs", function()
-  local options = {}
-  local prompt_options = {
-    prompt = "Select LSP server to restart",
-  }
-  local lsp_servers = vim.lsp.get_clients()
-  for _, server in ipairs(lsp_servers) do
-    table.insert(options, server.config.name)
-  end
-
-  vim.ui.select(options, prompt_options, function(choice)
-    if not choice then
-      -- cancled
-      return
-    end
-    vim.cmd("LspRestart " .. choice)
-  end)
-end, opts("Restart LSP server", false))
