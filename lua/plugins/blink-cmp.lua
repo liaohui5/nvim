@@ -1,6 +1,7 @@
 -------------------------------------------------------------------------------------
 --- github: https://github.com/saghen/blink.cmp
 --- https://github.com/Saghen/blink.cmp/blob/main/lua/blink/cmp/config/keymap.lua
+--- docs: https://cmp.saghen.dev/
 -------------------------------------------------------------------------------------
 return {
   {
@@ -18,13 +19,66 @@ return {
     "saghen/blink.cmp",
     enabled = true,
     lazy = "VeryLazy",
+    dependencies = {
+      "marcoSven/blink-cmp-yanky",
+      "archie-judd/blink-cmp-words",
+    },
     opts = {
+      sources = {
+        default = {
+          "lsp",
+          "path",
+          "buffer",
+          "snippets",
+          "yank",
+          "dictionary",
+          "thesaurus",
+        },
+        providers = {
+          yank = {
+            name = "yank",
+            module = "blink-yanky",
+            opts = {
+              kind_icon = "󰆏",
+            },
+          },
+          dictionary = {
+            name = "blink-cmp-words",
+            module = "blink-cmp-words.dictionary",
+            opts = {
+              dictionary_search_threshold = 3,
+              pointer_symbols = { "!", "&", "^" },
+            },
+          },
+          thesaurus = {
+            name = "blink-cmp-words",
+            module = "blink-cmp-words.thesaurus",
+            opts = {
+              pointer_symbols = { "!", "&", "^" },
+            },
+          },
+        },
+        per_filetype = {
+          text = { "dictionary", "thesaurus" },
+          markdown = { "dictionary", "thesaurus" },
+        },
+      },
       completion = {
         keyword = {
           range = "prefix",
         },
         trigger = {
           show_on_trigger_character = false,
+        },
+        accept = {
+          auto_brackets = {
+            kind_resolution = {
+              enabled = false,
+            },
+            semantic_token_resolution = {
+              enabled = false,
+            },
+          },
         },
       },
       keymap = {
@@ -36,7 +90,7 @@ return {
         ["<c-f>"] = { "scroll_documentation_down", "fallback" },
         ["<tab>"] = { "snippet_forward", "fallback" },
         ["<s-tab>"] = { "snippet_backward", "fallback" },
-        -- ["<cr>"] = { "select_and_accept", "fallback" },
+        ["<cr>"] = { "select_and_accept", "fallback" },
       },
     },
     keys = {
