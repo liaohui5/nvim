@@ -49,7 +49,6 @@ return {
   {
     -- some quick action based on treesitter
     "ckolkey/ts-node-action",
-    dependencies = { "nvim-treesitter" },
     event = "VeryLazy",
     vscode = true,
     keys = {
@@ -66,7 +65,6 @@ return {
   {
     -- quick split/join multiple lines
     "Wansmer/treesj",
-    dependencies = { "nvim-treesitter" },
     event = "VeryLazy",
     vscode = true,
     keys = {
@@ -84,6 +82,29 @@ return {
           require("treesj").join()
         end,
         desc = "Join lines",
+        mode = "n",
+      },
+    },
+  },
+  {
+    -- auto toggle end of line comma and semi
+    "saifulapm/commasemi.nvim",
+    vscode = true,
+    opts = {
+      keymaps = false,
+      commands = true,
+    },
+    keys = {
+      {
+        "gb",
+        "<cmd>CommaToggle<cr>",
+        desc = "Toggle comma",
+        mode = "n",
+      },
+      {
+        "gB",
+        "<cmd>SemiToggle<cr>",
+        desc = "Toggle semi",
         mode = "n",
       },
     },
