@@ -30,6 +30,13 @@ return {
             ignored = true,
             follow = false,
             supports_live = true,
+            exclude = {
+              ".git",
+              ".DS_Store",
+              "node_modules",
+              "vendor",
+              "dist",
+            },
           })
         end,
         desc = "Find files",
