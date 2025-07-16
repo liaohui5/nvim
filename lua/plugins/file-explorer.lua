@@ -200,23 +200,27 @@ return {
         },
         renderer = {
           root_folder_label = false, -- hide root folder
-          decorators = { "Open", "Hidden", "Bookmark", "Diagnostics", "Copied", "Cut" },
+          highlight_git = "all",
           indent_markers = {
             enable = true,
             inline_arrows = false,
           },
           icons = {
             show = {
+              file = true,
+              folder = true,
+              diagnostics = true,
+              bookmarks = true,
               folder_arrow = false,
+              git = false,
+              modified = false,
+              hidden = false,
             },
           },
         },
         update_focused_file = {
           enable = true,
           exclude = false,
-        },
-        git = {
-          enable = false,
         },
         filters = {
           enable = false,
