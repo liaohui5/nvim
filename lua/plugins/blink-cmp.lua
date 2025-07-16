@@ -32,7 +32,7 @@ return {
           "snippets",
           "yank",
           "dictionary",
-          "thesaurus",
+          -- "thesaurus",
         },
         providers = {
           yank = {
