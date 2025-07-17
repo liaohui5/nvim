@@ -19,6 +19,14 @@ vim.opt.relativenumber = false
 vim.opt.conceallevel = 0
 vim.opt.spelllang = {}
 vim.opt.swapfile = false
+vim.opt.list = false -- show invisible characters
+vim.opt.listchars = {
+  tab = "↔ ",
+  eol = "↩",
+  space = ".",
+  extends = "◀",
+  precedes = "▶",
+}
 
 -----------------------------------------
 -- disabled default modules
