@@ -137,7 +137,6 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     version = "*",
-    lazy = "VeryLazy",
     enabled = true,
     event = "VeryLazy",
     dependencies = {
