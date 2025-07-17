@@ -7,11 +7,7 @@
         "path": "./html.json"
       },
       {
-        "language": [
-          "javascript",
-          "typescript",
-          "vue"
-        ],
+        "language": ["javascript", "typescript", "vue"],
         "path": "./javascript.json"
       },
       {
@@ -27,11 +23,7 @@
         "path": "./markdown.json"
       },
       {
-        "language": [
-          "sh",
-          "zsh",
-          "bash"
-        ],
+        "language": ["sh", "zsh", "bash"],
         "path": "./shell.json"
       },
       {

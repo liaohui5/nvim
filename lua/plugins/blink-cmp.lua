@@ -30,8 +30,8 @@ return {
           "path",
           "buffer",
           "snippets",
-          "yank",
-          "dictionary",
+          -- "yank",
+          -- "dictionary",
           -- "thesaurus",
         },
         providers = {

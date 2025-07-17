@@ -91,9 +91,7 @@
   },
   "Import Vitest": {
     "prefix": "impv",
-    "body": [
-      "import { describe, it, expect, beforeEach, vi } from \"vitest\";"
-    ],
+    "body": ["import { describe, it, expect, beforeEach, vi } from \"vitest\";"],
     "description": "import vitest"
   },
   "Import TypeScript Types": {

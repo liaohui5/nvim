@@ -1,15 +1,7 @@
 {
   "Vue Single File Component without styles": {
     "prefix": "vbase",
-    "body": [
-      "<template>",
-      "\t<div>${1:text}</div>",
-      "</template>",
-      "",
-      "<script setup>",
-      "$0",
-      "</script>"
-    ],
+    "body": ["<template>", "\t<div>${1:text}</div>", "</template>", "", "<script setup>", "$0", "</script>"],
     "description": "Base for Vue File with SCSS"
   },
   "Vue Single File Component with Typescript": {

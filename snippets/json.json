@@ -1,6 +1,6 @@
 {
-  "prettierconfig": {
-    "prefix": "prettierconfig",
+  "Generator Prettier Config": {
+    "prefix": "Generator Prettier Config",
     "body": [
       "{",
       "  \"printWidth\": 120,",
@@ -14,5 +14,52 @@
       "}"
     ],
     "description": "prettierconfig"
+  },
+  "Generator biome config": {
+    "prefix": "biomeconfig",
+    "body": [
+      "{",
+      "  \"\\$schema\": \"https://biomejs.dev/schemas/2.1.1/schema.json\",",
+      "  \"formatter\": {",
+      "    \"enabled\": true,",
+      "    \"formatWithErrors\": false,",
+      "    \"indentStyle\": \"space\",",
+      "    \"indentWidth\": 2,",
+      "    \"lineEnding\": \"lf\",",
+      "    \"lineWidth\": 120,",
+      "    \"attributePosition\": \"auto\",",
+      "    \"bracketSameLine\": false,",
+      "    \"bracketSpacing\": true,",
+      "    \"expand\": \"auto\",",
+      "    \"useEditorconfig\": true",
+      "  },",
+      "  \"javascript\": {",
+      "    \"formatter\": {",
+      "      \"jsxQuoteStyle\": \"double\",",
+      "      \"quoteProperties\": \"asNeeded\",",
+      "      \"trailingCommas\": \"all\",",
+      "      \"semicolons\": \"always\",",
+      "      \"arrowParentheses\": \"always\",",
+      "      \"bracketSameLine\": false,",
+      "      \"quoteStyle\": \"double\",",
+      "      \"attributePosition\": \"auto\",",
+      "      \"bracketSpacing\": true",
+      "    }",
+      "  },",
+      "  \"html\": {",
+      "    \"formatter\": {",
+      "      \"selfCloseVoidElements\": \"always\"",
+      "    }",
+      "  },",
+      "  \"linter\": {",
+      "    \"enabled\": false",
+      "  }",
+      "  \"assist\": {",
+      "    \"enabled\": true",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Generator biome config"
   }
 }
