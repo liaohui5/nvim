@@ -1,111 +1,19 @@
 {
-  "Vue Single File Component with SASS": {
+  "Vue Single File Component without styles": {
     "prefix": "vbase",
     "body": [
       "<template>",
-      "\t<div>",
-      "",
-      "\t</div>",
+      "\t<div>${1:text}</div>",
       "</template>",
       "",
-      "<script>",
-      "\texport default {",
-      "\t\t${0}",
-      "\t}",
-      "</script>",
-      "",
-      "<style lang=\"scss\" scoped>",
-      "",
-      "</style>"
+      "<script setup>",
+      "$0",
+      "</script>"
     ],
     "description": "Base for Vue File with SCSS"
   },
-  "Vue Single File Component with LESS": {
-    "prefix": "vbase-less",
-    "body": [
-      "<template>",
-      "\t<div>",
-      "",
-      "\t</div>",
-      "</template>",
-      "",
-      "<script>",
-      "\texport default {",
-      "\t\t${0}",
-      "\t}",
-      "</script>",
-      "",
-      "<style lang=\"less\" scoped>",
-      "",
-      "</style>"
-    ],
-    "description": "Base for Vue File with PostCSS"
-  },
-  "Vue Single File Component with postcss": {
-    "prefix": "vbase-pcss",
-    "body": [
-      "<template>",
-      "\t<div>",
-      "",
-      "\t</div>",
-      "</template>",
-      "",
-      "<script>",
-      "\texport default {",
-      "\t\t${0}",
-      "\t}",
-      "</script>",
-      "",
-      "<style lang=\"postcss\" scoped>",
-      "",
-      "</style>"
-    ],
-    "description": "Base for Vue File with PostCSS"
-  },
-  "Vue Single File Component with Css": {
-    "prefix": "vbase-css",
-    "body": [
-      "<template>",
-      "\t<div>",
-      "",
-      "\t</div>",
-      "</template>",
-      "",
-      "<script>",
-      "\texport default {",
-      "\t\t${0}",
-      "\t}",
-      "</script>",
-      "",
-      "<style scoped>",
-      "",
-      "</style>"
-    ],
-    "description": "Base for Vue File with CSS"
-  },
-  "Vue Single File Component with Stylus": {
-    "prefix": "vbase-styl",
-    "body": [
-      "<template>",
-      "\t<div>",
-      "",
-      "\t</div>",
-      "</template>",
-      "",
-      "<script>",
-      "\texport default {",
-      "\t\t${0}",
-      "\t}",
-      "</script>",
-      "",
-      "<style lang=\"stylus\" scoped>",
-      "",
-      "</style>"
-    ],
-    "description": "Base for Vue File with Stylus"
-  },
   "Vue Single File Component with Typescript": {
-    "prefix": "vbase-ts",
+    "prefix": "vbasets",
     "body": [
       "<template>",
       "\t<div>",
@@ -113,64 +21,14 @@
       "\t</div>",
       "</template>",
       "",
-      "<script lang=\"ts\">",
-      "\timport Vue from 'vue'",
-      "",
-      "\texport default Vue.extend({",
-      "\t\t${0}",
-      "\t})",
-      "</script>",
-      "",
-      "<style scoped>",
-      "",
-      "</style>"
+      "<script lang=\"ts\" setup>",
+      "$0",
+      "</script>"
     ],
     "description": "Base for Vue File with Typescript"
   },
-  "Vue Single File Component with No Style": {
-    "prefix": "vbase-ns",
-    "body": [
-      "<template>",
-      "\t<div>",
-      "",
-      "\t</div>",
-      "</template>",
-      "",
-      "<script>",
-      "\texport default {",
-      "\t\t${0}",
-      "\t}",
-      "</script>"
-    ],
-    "description": "Base for Vue File with no styles"
-  },
-  "Vue Single File Component Composition API": {
-    "prefix": "vbase3-opts",
-    "body": [
-      "<template>",
-      "\t<div>",
-      "",
-      "\t</div>",
-      "</template>",
-      "",
-      "<script>",
-      "export default {",
-      "\tsetup () {",
-      "\t\t${0}",
-      "",
-      "\t\treturn {}",
-      "\t}",
-      "}",
-      "</script>",
-      "",
-      "<style lang=\"scss\" scoped>",
-      "",
-      "</style>"
-    ],
-    "description": "Base for Vue File Composition API with SCSS"
-  },
-  "Vue Single File Component Setup Composition API": {
-    "prefix": "vbase3",
+  "Vue Single File Component with SASS": {
+    "prefix": "vbasescss",
     "body": [
       "<template>",
       "\t<div>",
@@ -179,17 +37,15 @@
       "</template>",
       "",
       "<script setup>",
-      "",
+      "$0",
       "</script>",
       "",
-      "<style lang=\"scss\" scoped>",
-      "",
-      "</style>"
+      "<style lang=\"scss\" scoped></style>"
     ],
-    "description": "Base for Vue File Setup Composition API with SCSS"
+    "description": "Base for Vue File with SCSS"
   },
-  "Vue Single File Component Composition API with Typescript": {
-    "prefix": "vbase3-ts-opts",
+  "Vue Single File Component with LESS": {
+    "prefix": "vbaseless",
     "body": [
       "<template>",
       "\t<div>",
@@ -197,25 +53,16 @@
       "\t</div>",
       "</template>",
       "",
-      "<script lang=\"ts\">",
-      "import { defineComponent } from 'vue'",
-      "",
-      "export default defineComponent({",
-      "\tsetup () {",
-      "\t\t${0}\n",
-      "\t\treturn {}",
-      "\t}",
-      "})",
+      "<script setup>",
+      "$0",
       "</script>",
       "",
-      "<style scoped>",
-      "",
-      "</style>"
+      "<style lang=\"less\" scoped></style>"
     ],
-    "description": "Base for Vue File Composition API - Typescript"
+    "description": "Base for Vue File with PostCSS"
   },
-  "Vue Single File Component Setup Composition API with Typescript": {
-    "prefix": "vbase3-ts",
+  "Vue Single File Component with CSS": {
+    "prefix": "vbasecss",
     "body": [
       "<template>",
       "\t<div>",
@@ -223,18 +70,16 @@
       "\t</div>",
       "</template>",
       "",
-      "<script setup lang=\"ts\">",
-      "",
+      "<script setup>",
+      "$0",
       "</script>",
       "",
-      "<style scoped>",
-      "",
-      "</style>"
+      "<style scoped></style>"
     ],
-    "description": "Base for Vue File Setup Composition API - Typescript"
+    "description": "Base for Vue File with CSS"
   },
-  "Vue Single File Component with Class based Typescript format": {
-    "prefix": "vbase-ts-class",
+  "Vue Single File Component with Stylus": {
+    "prefix": "vbasestyl",
     "body": [
       "<template>",
       "\t<div>",
@@ -242,105 +87,12 @@
       "\t</div>",
       "</template>",
       "",
-      "<script lang=\"ts\">",
-      "\timport { Component, Vue } from 'vue-property-decorator';",
-      "",
-      "\t@Component",
-      "\texport default class ${0} extends Vue {",
-      "\t\t",
-      "\t}",
+      "<script setup>",
+      "$0",
       "</script>",
       "",
-      "<style scoped>",
-      "",
-      "</style>"
+      "<style lang=\"stylus\" scoped></style>"
     ],
-    "description": "Base for Vue File with Class based Typescript format"
-  },
-  "Console Log": {
-    "prefix": "clog",
-    "body": ["console.log(${0});"],
-    "description": "Output to console"
-  },
-  "Named Function": {
-    "prefix": "fn",
-    "body": ["function ${1:name}(${2}) {", "  ${0}", "}"],
-    "description": "Named Function"
-  },
-  "Async Named function": {
-    "prefix": "asfn",
-    "body": ["async function ${1}(${2}){", "  await ${0}", "}"],
-    "description": "Async Named function"
-  },
-  "Const Variable Function": {
-    "prefix": "caf",
-    "body": ["const ${1} = (${2}) => {", "  ${0}", "}"],
-    "description": "Const Variable Function"
-  },
-  "ES Export All": {
-    "prefix": "expa",
-    "body": ["export * from ${0};"],
-    "description": "ES Export All"
-  },
-  "ES Export Default": {
-    "prefix": "expd",
-    "body": ["export default ${0};"],
-    "description": "ES Export Default"
-  },
-  "ES Export Default As": {
-    "prefix": "expas",
-    "body": ["export { default as ${0} } from \"${1}\";"],
-    "description": "ES Export Default As"
-  },
-  "ES Export Const": {
-    "prefix": "expc",
-    "body": ["export const ${1} = ${0};"],
-    "description": "ES Export Const"
-  },
-  "ES Export Function": {
-    "prefix": "expf",
-    "body": ["export function ${1}(${2}) {", "\t${0}", "}"],
-    "description": "ES Export Function"
-  },
-  "ES Export Default Function": {
-    "prefix": "expdf",
-    "body": ["export default function ${1}(${2}) {", "\t${0}", "}"],
-    "description": "ES Export Default Function"
-  },
-  "ES Export Async Function": {
-    "prefix": "expasf",
-    "body": ["export async function ${1}(${2}) {\n\t${0}\n}"],
-    "description": "ES Export Arrow Function"
-  },
-  "ES Export Arrow Function": {
-    "prefix": "expaf",
-    "body": ["export const ${1:name} = (${2}) => {", "\t${0}", "}"],
-    "description": "ES Export Arrow Function"
-  },
-  "ES Export Class": {
-    "prefix": "expcl",
-    "body": ["export class ${1} {", "\t${0}", "};"],
-    "description": "ES Export class"
-  },
-  "ES Import External Module": {
-    "prefix": "impd",
-    "body": ["import ${0} from \"${1}\";"],
-    "description": "ES Import"
-  },
-  "ES Import Module": {
-    "prefix": "impo",
-    "body": ["import {${0}} from \"${1}\";"],
-    "description": "ES Destruction Import"
-  },
-  "Unit Test Describe": {
-    "prefix": "desc",
-    "body": ["describe('${1}', () => {", "  ${2}", "})"],
-    "description": "Unit Test describe"
-  },
-  "Unit Test case": {
-    "prefix": "it",
-    "body": ["it('${1}', () => {", "  expect(${2}).toBe(${3});", "})"],
-    "description": "Unit Test case"
+    "description": "Base for Vue File with Stylus"
   }
 }
-

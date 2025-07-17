@@ -19,6 +19,21 @@
     "body": ["const ${1} = (${2}) => {", "  ${0}", "}"],
     "description": "const variable function"
   },
+  "ES Export Class": {
+    "prefix": "expcl",
+    "body": ["export class ${1} {", "\t${0}", "};"],
+    "description": "ES Export class"
+  },
+  "ES Import External Module": {
+    "prefix": "impd",
+    "body": ["import ${0} from \"${1}\";"],
+    "description": "ES Import"
+  },
+  "ES Import Module": {
+    "prefix": "impo",
+    "body": ["import {${0}} from \"${1}\";"],
+    "description": "ES Destruction Import"
+  },
   "ES Export All": {
     "prefix": "expa",
     "body": ["export * from ${0};"],
@@ -95,22 +110,5 @@
     "prefix": "it",
     "body": ["it('${1}', () => {", "  expect(${2}).toBe(${3});", "})"],
     "description": "unit Test case"
-  },
-  "Prettier Config Generator": {
-    "prefix": "prettierconfig",
-    "body": [
-      "// docs: https://prettier.io/docs/en/",
-      "export default {",
-      "  printWidth: 120,",
-      "  tabWidth: 2,",
-      "  useTabs: false,",
-      "  semi: true,",
-      "  singleQuote: false,",
-      "  trailingCommas: \"all\",",
-      "  bracketSpacing: true,",
-      "  alwaysParens: true,",
-      "};"
-    ],
-    "description": "Prettier Config Generator"
   }
 }

@@ -7,12 +7,16 @@
         "path": "./html.json"
       },
       {
-        "language": "javascript",
+        "language": [
+          "javascript",
+          "typescript",
+          "vue"
+        ],
         "path": "./javascript.json"
       },
       {
-        "language": "typescript",
-        "path": "./javascript.json"
+        "language": "vue",
+        "path": "./vue.json"
       },
       {
         "language": "json",
@@ -23,20 +27,16 @@
         "path": "./markdown.json"
       },
       {
-        "language": "vue",
-        "path": "./vue.json"
-      },
-      {
-        "language": "sh",
+        "language": [
+          "sh",
+          "zsh",
+          "bash"
+        ],
         "path": "./shell.json"
       },
       {
-        "language": "zsh",
-        "path": "./shell.json"
-      },
-      {
-        "language": "bash",
-        "path": "./shell.json"
+        "language": "editorconfig",
+        "path": "./editorconfig.json"
       }
     ]
   }
