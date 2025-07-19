@@ -37,42 +37,50 @@ return {
           -- "thesaurus",
         },
         providers = {
-          -- avante = {
-          --   module = "blink-cmp-avante",
-          --   name = "Avante",
-          --   opts = {
-          --     AvanteCmd = "",
-          --     AvanteMention = "",
-          --   },
-          -- },
-          -- yank = {
-          --   name = "yank",
-          --   module = "blink-yanky",
-          --   opts = {
-          --     kind_icon = "󰆏",
-          --   },
-          -- },
-          -- dictionary = {
-          --   name = "blink-cmp-words",
-          --   module = "blink-cmp-words.dictionary",
-          --   opts = {
-          --     score_offset = 10,
-          --     dictionary_search_threshold = 3,
-          --     pointer_symbols = { "!", "&", "^" },
-          --   },
-          -- },
-          -- thesaurus = {
-          --   name = "blink-cmp-words",
-          --   module = "blink-cmp-words.thesaurus",
-          --   opts = {
-          --     score_offset = 10,
-          --     pointer_symbols = { "!", "&", "^" },
-          --   },
-          -- },
+          avante = {
+            module = "blink-cmp-avante",
+            name = "Avante",
+            opts = {
+              AvanteCmd = "",
+              AvanteMention = "",
+            },
+          },
+          yank = {
+            name = "yank",
+            module = "blink-yanky",
+            opts = {
+              kind_icon = "󰆏",
+            },
+          },
+          dictionary = {
+            name = "blink-cmp-words",
+            module = "blink-cmp-words.dictionary",
+            opts = {
+              score_offset = 0,
+              dictionary_search_threshold = 3,
+              pointer_symbols = { "!", "&", "^" },
+            },
+          },
+          thesaurus = {
+            name = "blink-cmp-words",
+            module = "blink-cmp-words.thesaurus",
+            opts = {
+              score_offset = 0,
+              pointer_symbols = { "!", "&", "^" },
+            },
+          },
         },
         per_filetype = {
-          text = { "dictionary", "thesaurus" },
-          markdown = { "dictionary", "thesaurus" },
+          text = {
+            inherit_defaults = false,
+            "dictionary",
+            "thesaurus",
+          },
+          markdown = {
+            inherit_defaults = false,
+            "dictionary",
+            "thesaurus",
+          },
         },
       },
       completion = {
@@ -84,12 +92,7 @@ return {
         },
         accept = {
           auto_brackets = {
-            kind_resolution = {
-              enabled = false,
-            },
-            semantic_token_resolution = {
-              enabled = false,
-            },
+            enabled = false,
           },
         },
       },
