@@ -16,7 +16,7 @@ return {
     "yetone/avante.nvim",
     event = "VeryLazy",
     lazy = false,
-    enabled = true,
+    enabled = false,
     build = "make",
     dependencies = {
       "stevearc/dressing.nvim",

@@ -20,55 +20,55 @@ return {
     enabled = true,
     lazy = "VeryLazy",
     dependencies = {
-      "marcoSven/blink-cmp-yanky",
-      "archie-judd/blink-cmp-words",
-      "Kaiser-Yang/blink-cmp-avante",
+      -- "marcoSven/blink-cmp-yanky",
+      -- "archie-judd/blink-cmp-words",
+      -- "Kaiser-Yang/blink-cmp-avante",
     },
     opts = {
       sources = {
         default = {
-          "avante",
           "lsp",
           "path",
           "buffer",
           "snippets",
-          "yank",
-          "dictionary",
+          -- "avante",
+          -- "yank",
+          -- "dictionary",
           -- "thesaurus",
         },
         providers = {
-          avante = {
-            module = "blink-cmp-avante",
-            name = "Avante",
-            opts = {
-              AvanteCmd = "",
-              AvanteMention = "",
-            },
-          },
-          yank = {
-            name = "yank",
-            module = "blink-yanky",
-            opts = {
-              kind_icon = "󰆏",
-            },
-          },
-          dictionary = {
-            name = "blink-cmp-words",
-            module = "blink-cmp-words.dictionary",
-            opts = {
-              score_offset = 10,
-              dictionary_search_threshold = 3,
-              pointer_symbols = { "!", "&", "^" },
-            },
-          },
-          thesaurus = {
-            name = "blink-cmp-words",
-            module = "blink-cmp-words.thesaurus",
-            opts = {
-              score_offset = 10,
-              pointer_symbols = { "!", "&", "^" },
-            },
-          },
+          -- avante = {
+          --   module = "blink-cmp-avante",
+          --   name = "Avante",
+          --   opts = {
+          --     AvanteCmd = "",
+          --     AvanteMention = "",
+          --   },
+          -- },
+          -- yank = {
+          --   name = "yank",
+          --   module = "blink-yanky",
+          --   opts = {
+          --     kind_icon = "󰆏",
+          --   },
+          -- },
+          -- dictionary = {
+          --   name = "blink-cmp-words",
+          --   module = "blink-cmp-words.dictionary",
+          --   opts = {
+          --     score_offset = 10,
+          --     dictionary_search_threshold = 3,
+          --     pointer_symbols = { "!", "&", "^" },
+          --   },
+          -- },
+          -- thesaurus = {
+          --   name = "blink-cmp-words",
+          --   module = "blink-cmp-words.thesaurus",
+          --   opts = {
+          --     score_offset = 10,
+          --     pointer_symbols = { "!", "&", "^" },
+          --   },
+          -- },
         },
         per_filetype = {
           text = { "dictionary", "thesaurus" },
