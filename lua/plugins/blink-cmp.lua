@@ -22,19 +22,29 @@ return {
     dependencies = {
       "marcoSven/blink-cmp-yanky",
       "archie-judd/blink-cmp-words",
+      "Kaiser-Yang/blink-cmp-avante",
     },
     opts = {
       sources = {
         default = {
+          "avante",
           "lsp",
           "path",
           "buffer",
           "snippets",
-          -- "yank",
-          -- "dictionary",
+          "yank",
+          "dictionary",
           -- "thesaurus",
         },
         providers = {
+          avante = {
+            module = "blink-cmp-avante",
+            name = "Avante",
+            opts = {
+              AvanteCmd = "",
+              AvanteMention = "",
+            },
+          },
           yank = {
             name = "yank",
             module = "blink-yanky",
