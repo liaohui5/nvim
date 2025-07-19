@@ -53,7 +53,7 @@
       "  },",
       "  \"linter\": {",
       "    \"enabled\": false",
-      "  }",
+      "  },",
       "  \"assist\": {",
       "    \"enabled\": true",
       "  }",
