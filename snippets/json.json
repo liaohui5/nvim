@@ -19,7 +19,7 @@
     "prefix": "biomeconfig",
     "body": [
       "{",
-      "  \"\\$schema\": \"https://biomejs.dev/schemas/2.1.1/schema.json\",",
+      "  \"\\$schema\": \"https://biomejs.dev/schemas/2.1.2/schema.json\",",
       "  \"formatter\": {",
       "    \"enabled\": true,",
       "    \"formatWithErrors\": false,",
@@ -55,11 +55,38 @@
       "    \"enabled\": false",
       "  },",
       "  \"assist\": {",
-      "    \"enabled\": true",
+      "    \"enabled\": false",
       "  }",
       "}",
       ""
     ],
     "description": "Generator biome config"
+  },
+  "Generator tsconfig": {
+    "prefix": "tsconfig",
+    "body": [
+      "{",
+      "  \"compilerOptions\": {",
+      "    \"forceConsistentCasingInFileNames\": true,",
+      "    \"target\": \"es2016\",",
+      "    \"module\": \"es6\",",
+      "    \"moduleResolution\": \"node\",",
+      "    \"esModuleInterop\": true,",
+      "    \"allowSyntheticDefaultImports\": true,",
+      "    \"strict\": true,",
+      "    \"noImplicitAny\": true,",
+      "    \"noEmit\": true,",
+      "    \"noUnusedLocals\": true,",
+      "    \"types\": [\"node\"],",
+      "    \"baseUrl\": \".\",",
+      "    \"paths\": {",
+      "      \"@/\": [\"./src/*\"],",
+      "    },",
+      "  },",
+      "",
+      "  \"exclude\": [\"**/dist/**\", \"**/.nuxt/**\", \"**/nuxt.d.ts\", \"**/examples/**\", \"**/docs/**\", \"**/playground/**\"],",
+      "}"
+    ],
+    "description": "Generator tsconfig"
   }
 }
