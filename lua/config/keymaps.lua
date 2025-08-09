@@ -34,3 +34,10 @@ map({ "n", "t" }, "<c-x>", "<c-_>", opts("Open terminal"))
 map({ "t", "c" }, "<c-h>", "<Left>", opts("Move left"))
 
 map({ "t", "c" }, "<c-l>", "<Right>", opts("Move right"))
+
+-- toggle blank characters visible
+map("n", "<leader>ue", function()
+  vim.wo.list = not vim.wo.list
+end, {
+  desc = "Toggle extra chars visible",
+})
