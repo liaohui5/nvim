@@ -7,7 +7,7 @@ return {
     },
   },
   {
-    "echasnovski/mini.comment",
+    "nvim-mini/mini.comment",
     event = "VeryLazy",
     opts = {
       options = {
@@ -34,7 +34,7 @@ return {
     },
   },
   {
-    "echasnovski/mini.surround",
+    "nvim-mini/mini.surround",
     event = "VeryLazy",
     opts = {
       mappings = {
@@ -62,12 +62,12 @@ return {
     end,
   },
   {
-    "echasnovski/mini.pairs",
+    "nvim-mini/mini.pairs",
     event = "VeryLazy",
     enabled = true,
   },
   {
-    "echasnovski/mini.align",
+    "nvim-mini/mini.align",
     enabled = true,
     vscode = true,
     opts = {
