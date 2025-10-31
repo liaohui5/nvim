@@ -36,3 +36,21 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.formatoptions:remove({ "c", "r", "o" })
   end,
 })
+
+-- show listchars in visual mode
+vim.api.nvim_create_autocmd("ModeChanged", {
+  group = augroup("show_listchars_visual"),
+  pattern = "*:v*",
+  callback = function()
+    vim.opt.list = true
+  end,
+})
+
+-- hide listchars in normal mode
+vim.api.nvim_create_autocmd("ModeChanged", {
+  group = augroup("show_listchars_normal"),
+  pattern = "*:n*",
+  callback = function()
+    vim.opt.list = false
+  end,
+})
