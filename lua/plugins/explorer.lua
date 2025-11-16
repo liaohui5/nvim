@@ -3,6 +3,7 @@
 -- docs: https://github.com/nvim-tree/nvim-tree.lua
 -- docs: https://github.com/nvim-neo-tree/neo-tree.nvim
 -- default: https://github.com/nvim-neo-tree/neo-tree.nvim/blob/main/lua/neo-tree/defaults.lua
+-- snacks explorer: https://github.com/folke/snacks.nvim
 ------------------------------------------------------------------------------------------------
 return {
   {
@@ -137,7 +138,7 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     version = "*",
-    enabled = true,
+    enabled = false,
     event = "VeryLazy",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
@@ -236,26 +237,36 @@ return {
       },
     },
   },
-  -- {
-  --   "folke/snacks.nvim",
-  --   ---@type snacks.Config
-  --   opts = {
-  --     explorer = {
-  --       replace_netrw = true,
-  --       -- your explorer configuration comes here
-  --       -- or leave it empty to use the default settings
-  --       -- refer to the configuration section below
-  --     },
-  --   },
-  --   keys = {
-  --     {
-  --       "<c-e>",
-  --       function()
-  --         Snacks.explorer()
-  --       end,
-  --       mode = "n",
-  --       desc = "Toggle Explorer",
-  --     },
-  --   },
-  -- },
+  {
+    "folke/snacks.nvim",
+    ---@type snacks.Config
+    opts = {
+      explorer = {
+        replace_netrw = true,
+        trash = true, -- move file to trash when "delete"
+      },
+      picker = {
+        sources = {
+          explorer = {
+            -- show hidden files and git ignored files by default
+            show_empty = true,
+            hidden = true,
+            ignored = true,
+            follow = false,
+            supports_live = true,
+          },
+        },
+      },
+    },
+    keys = {
+      {
+        "<c-e>",
+        function()
+          Snacks.explorer()
+        end,
+        mode = "n",
+        desc = "Toggle Explorer",
+      },
+    },
+  },
 }
