@@ -248,12 +248,24 @@ return {
       picker = {
         sources = {
           explorer = {
+            -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#explorer
             -- show hidden files and git ignored files by default
             show_empty = true,
             hidden = true,
             ignored = true,
             follow = false,
             supports_live = true,
+            win = {
+              list = {
+                keys = {
+                  ["x"] = "explorer_del",
+                  ["r"] = "explorer_rename",
+                  ["Y"] = "explorer_copy",
+                  ["y"] = { "explorer_yank", mode = { "n", "x" } },
+                  ["d"] = { "explorer_yank", mode = { "n", "x" } },
+                },
+              },
+            },
           },
         },
       },
