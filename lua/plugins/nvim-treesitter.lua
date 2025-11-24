@@ -2,22 +2,8 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     event = "VeryLazy",
-    keys = {
-      {
-        "+",
-        desc = "Increment selection",
-        mode = "v",
-        noremap = true,
-      },
-      {
-        "_",
-        desc = "Decrement selection",
-        mode = "v",
-        noremap = true,
-      },
-    },
     opts = {
-      -- all supported languages: https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
+      -- supported languages: https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
@@ -26,25 +12,13 @@ return {
         enable = true,
       },
       incremental_selection = {
-        enable = true,
-        keymaps = {
-          node_incremental = "+",
-          node_decremental = "_",
-        },
-      },
-      autotag = {
-        enable = true,
-        enable_rename = true,
-        enable_close = true,
-        enable_close_on_slash = true,
+        -- it's removed in new version
+        enable = false,
       },
     },
-  },
-  {
-    -- auto close xml tag
-    "windwp/nvim-ts-autotag",
-    event = "InsertEnter",
-    enabled = true,
+    ensure_installed = {
+      "just",
+    },
   },
   {
     -- some quick action based on treesitter
