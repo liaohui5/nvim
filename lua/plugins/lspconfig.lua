@@ -12,7 +12,7 @@ return {
         },
       },
       emmet_language_server = {
-        -- better html and css support
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#emmet_language_server
         filetypes = {
           "html",
           "css",
@@ -22,6 +22,23 @@ return {
           "pug",
           "vue",
           "javascriptreact",
+          "typescriptreact",
+        },
+      },
+      biome = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#biome
+        filetypes = {
+          "astro",
+          "css",
+          "graphql",
+          "html",
+          "javascript",
+          "javascriptreact",
+          "json",
+          "jsonc",
+          "svelte",
+          "typescript",
+          "typescript.tsx",
           "typescriptreact",
         },
       },
