@@ -1,30 +1,29 @@
 return {
+  -- https://github.com/folke/snacks.nvim
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
+  keys = {
+    {
+      "<leader>.",
+      function()
+        Snacks.scratch()
+      end,
+      desc = "Toggle Scratch Buffer",
+    },
+    {
+      "<leader>S",
+      function()
+        Snacks.scratch.select()
+      end,
+      desc = "Select Scratch Buffer",
+    },
+  },
   opts = {
-    animate = {
-      enabled = false,
-    },
-    debug = {
-      enabled = false,
-    },
-    dim = {
-      enabled = false,
-    },
-    notifier = {
-      enabled = false,
-    },
-    profiler = {
-      enabled = false,
-    },
-    scratch = {
-      enabled = false,
-    },
     scroll = {
       enabled = false,
     },
-    words = {
+    dim = {
       enabled = false,
     },
     zen = {

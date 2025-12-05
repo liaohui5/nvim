@@ -2,18 +2,22 @@
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
-  enabled = false,
+  enabled = true,
   dependencies = {
     "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify",
   },
   keys = {
     { "<c-f>", false },
     { "<c-b>", false },
   },
   opts = {
-    -- cmdline = {
-    --   enabled = true,
-    -- },
+    -- disable cmdline for use classic command line
+    cmdline = {
+      view = "cmdline",
+      enabled = false,
+    },
+    messages = {
+      enabled = false,
+    },
   },
 }
