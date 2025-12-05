@@ -2,13 +2,17 @@ return {
   "neovim/nvim-lspconfig",
   event = "VeryLazy",
   opts = {
+    -- https://www.lazyvim.org/plugins/lsp#nvim-lspconfig
     inlay_hints = {
-      enabled = false, -- disabled inlay_hints
+      enabled = false,
+    },
+    diagnostics = {
+      virtual_text = false,
     },
     servers = {
       ["*"] = {
         keys = {
-          { "<c-k>", false }, -- disable default lsp server keymap
+          { "<c-k>", false },
         },
       },
       emmet_language_server = {
