@@ -3,16 +3,24 @@
 local map = vim.keymap.set
 
 -- see more arguments :h map-arguments
-local function opts(desc, remap, noremap)
+local function opts(desc, _remap, silent)
+  local remap = _remap or true
   return {
-    remap = remap or true,
-    noremap = noremap or true,
+    remap = remap,
+    noremap = remap and false or true,
     desc = desc,
+    silent = silent or true,
   }
 end
 
+-- Just delete, not cut strings
+-- don't add "desc", it will be tracked by the "which-key"
+-- plugin leading to an infinite loop and crash
+map({ "n", "v" }, "x", '"_x')
+map({ "n", "v" }, "X", '"_X')
+
 -- format
-map({ "n", "v" }, "<leader>ff", "<leader>cf", opts("Format Document", false))
+map({ "n", "v" }, "<leader>ff", "<leader>cf", opts("Format Document"))
 
 map("n", "<leader>rn", "<leader>cr", opts("Rename Symbol"))
 

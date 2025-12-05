@@ -24,19 +24,19 @@ return {
       {
         "<leader>rr",
         "<cmd>SearchReplaceWithinVisualSelection<cr>",
-        desc = "Search and replace in selection",
+        desc = "Replace in selection",
         mode = "v",
       },
       {
         "<leader>rr",
         "<cmd>SearchReplaceSingleBufferOpen<cr>",
-        desc = "Search and replace in selection",
+        desc = "Replace in file",
         mode = "n",
       },
       {
         "<leader>rR",
         "<cmd>SearchReplaceMultiBufferOpen<cr>",
-        desc = "Search and replace in selection",
+        desc = "Replace in files",
         mode = "n",
       },
     },

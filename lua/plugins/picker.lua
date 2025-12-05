@@ -19,7 +19,7 @@ return {
     lazy = false,
     keys = {
       {
-        "<c-p>",
+        "<leader><space>",
         function()
           -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#files
           Snacks.picker.files({
@@ -32,7 +32,9 @@ return {
             supports_live = true,
             exclude = {
               ".git",
+              ".husky",
               ".DS_Store",
+              ".venv",
               "node_modules",
               "vendor",
               "dist",

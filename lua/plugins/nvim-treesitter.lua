@@ -44,9 +44,7 @@ return {
     keys = {
       {
         "gS",
-        function()
-          require("treesj").split()
-        end,
+        function() require("treesj").split() end,
         desc = "Split lines",
         mode = "n",
       },
@@ -56,29 +54,6 @@ return {
           require("treesj").join()
         end,
         desc = "Join lines",
-        mode = "n",
-      },
-    },
-  },
-  {
-    -- auto toggle end of line comma and semi
-    "saifulapm/commasemi.nvim",
-    vscode = true,
-    opts = {
-      keymaps = false,
-      commands = true,
-    },
-    keys = {
-      {
-        "gb",
-        "<cmd>CommaToggle<cr>",
-        desc = "Toggle comma",
-        mode = "n",
-      },
-      {
-        "gB",
-        "<cmd>SemiToggle<cr>",
-        desc = "Toggle semi",
         mode = "n",
       },
     },
