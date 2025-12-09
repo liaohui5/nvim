@@ -35,15 +35,28 @@ return {
       },
     },
     keymap = {
-      ["<c-o>"] = { "show", "show_documentation", "hide_documentation" },
-      ["<c-e>"] = { "cancel", "fallback" },
+      preset = "default",
+      ["<c-space>"] = false, -- for switch input method
+      ["<c-i>"] = { "show", "show_documentation", "hide_documentation", "fallback" },
+      ["<c-o>"] = {
+        function(cmp)
+          cmp.show({ providers = { "snippets" } })
+        end,
+      },
       ["<c-k>"] = { "select_prev", "fallback" },
       ["<c-j>"] = { "select_next", "fallback" },
-      ["<c-b>"] = { "scroll_documentation_up", "fallback" },
-      ["<c-f>"] = { "scroll_documentation_down", "fallback" },
-      ["<tab>"] = { "snippet_forward", "fallback" },
-      ["<s-tab>"] = { "snippet_backward", "fallback" },
       ["<cr>"] = { "select_and_accept", "fallback" },
+    },
+    cmdline = {
+      keymap = {
+        preset = "inherit",
+        ["<c-o>"] = { "show", "fallback" },
+      },
+      completion = {
+        menu = {
+          auto_show = false,
+        },
+      },
     },
   },
   keys = {
