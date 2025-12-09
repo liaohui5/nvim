@@ -34,6 +34,14 @@ return {
         desc = "Trigger Node Action",
         mode = "n",
       },
+      {
+        "gb",
+        function()
+          require("helpers.comma_semicolon").toggle_comma_semicolon()
+        end,
+        desc = "Toggle comma semicolon",
+        mode = "n",
+      },
     },
   },
   {

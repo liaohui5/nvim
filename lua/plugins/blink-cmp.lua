@@ -1,7 +1,8 @@
 -------------------------------------------------------------------------------------
 --- github: https://github.com/saghen/blink.cmp
---- https://github.com/Saghen/blink.cmp/blob/main/lua/blink/cmp/config/keymap.lua
 --- docs: https://cmp.saghen.dev/
+--- https://github.com/Saghen/blink.cmp/blob/main/lua/blink/cmp/config/keymap.lua
+--- https://github1s.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/extras/coding/blink.lua
 -------------------------------------------------------------------------------------
 return {
   "saghen/blink.cmp",
@@ -13,20 +14,23 @@ return {
     -- "Kaiser-Yang/blink-cmp-avante",
   },
   opts = {
-    sources = {
-      default = {
-        "lsp",
-        "snippets",
-        "path",
-        "buffer",
-      },
-    },
+    ---- https://cmp.saghen.dev/configuration/sources.html
+    -- sources = {
+    --   default = {
+    --     "lsp",
+    --     "snippets",
+    --     "path",
+    --     "buffer",
+    --   },
+    -- },
     completion = {
       keyword = {
-        range = "prefix",
+        range = "full",
       },
       trigger = {
-        show_on_trigger_character = false,
+        show_on_keyword = true,
+        show_on_trigger_character = true,
+        show_on_insert_on_trigger_character = true,
       },
     },
     keymap = {
