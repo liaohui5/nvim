@@ -42,6 +42,14 @@ return {
         desc = "Toggle comma semicolon",
         mode = "n",
       },
+      {
+        "gB",
+        function()
+          require("helpers.comma_semicolon").toggle_comma_semicolon(true)
+        end,
+        desc = "Toggle comma semicolon",
+        mode = "n",
+      },
     },
   },
   {
