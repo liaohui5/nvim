@@ -55,7 +55,7 @@
 			"    }",
 			"  },",
 			"  \"linter\": {",
-			"    \"enabled\": true",
+			"    \"enabled\": false",
 			"  },",
 			"  \"assist\": {",
 			"    \"enabled\": true",
