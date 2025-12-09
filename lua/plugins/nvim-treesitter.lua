@@ -17,7 +17,7 @@ return {
       },
     },
     ensure_installed = {
-      "just",
+      "just", -- just docs: https://just.systems/man/zh/
     },
   },
   {
@@ -44,7 +44,9 @@ return {
     keys = {
       {
         "gS",
-        function() require("treesj").split() end,
+        function()
+          require("treesj").split()
+        end,
         desc = "Split lines",
         mode = "n",
       },

@@ -28,11 +28,6 @@ return {
       trigger = {
         show_on_trigger_character = false,
       },
-      accept = {
-        auto_brackets = {
-          enabled = false,
-        },
-      },
     },
     keymap = {
       preset = "default",
@@ -43,6 +38,8 @@ return {
           cmp.show({ providers = { "snippets" } })
         end,
       },
+      ["<c-h>"] = { "snippet_backward", "fallback" },
+      ["<c-l>"] = { "snippet_forward", "fallback" },
       ["<c-k>"] = { "select_prev", "fallback" },
       ["<c-j>"] = { "select_next", "fallback" },
       ["<cr>"] = { "select_and_accept", "fallback" },
@@ -59,32 +56,33 @@ return {
       },
     },
   },
-  keys = {
-    {
-      -- select previous suggestion item
-      "<c-l>",
-      function()
-        if vim.snippet.active({ direction = 1 }) then
-          vim.snippet.jump(1)
-        else
-          vim.snippet.stop()
-        end
-      end,
-      silent = true,
-      mode = { "i", "s" },
-    },
-    {
-      -- select next suggestion item
-      "<c-h>",
-      function()
-        if vim.snippet.active({ direction = -1 }) then
-          vim.snippet.jump(-1)
-        else
-          vim.snippet.stop()
-        end
-      end,
-      silent = true,
-      mode = { "i", "s" },
-    },
-  },
+  ---- use blink commands --
+  -- keys = {
+  --   {
+  --     -- select previous suggestion item
+  --     "<c-l>",
+  --     function()
+  --       if vim.snippet.active({ direction = 1 }) then
+  --         vim.snippet.jump(1)
+  --       else
+  --         vim.snippet.stop()
+  --       end
+  --     end,
+  --     silent = true,
+  --     mode = { "i", "s" },
+  --   },
+  --   {
+  --     -- select next suggestion item
+  --     "<c-h>",
+  --     function()
+  --       if vim.snippet.active({ direction = -1 }) then
+  --         vim.snippet.jump(-1)
+  --       else
+  --         vim.snippet.stop()
+  --       end
+  --     end,
+  --     silent = true,
+  --     mode = { "i", "s" },
+  --   },
+  -- },
 }
