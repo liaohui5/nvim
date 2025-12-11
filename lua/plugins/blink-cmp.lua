@@ -35,17 +35,14 @@ return {
     keymap = {
       preset = "default",
       ["<c-space>"] = false, -- for switch input method
-      ["<c-i>"] = { "show", "show_documentation", "hide_documentation", "fallback" },
-      ["<c-o>"] = {
-        function(cmp)
-          cmp.show({ providers = { "snippets" } })
-        end,
-      },
+      ["<c-o>"] = { "show", "show_documentation", "hide_documentation", "fallback" },
       ["<c-h>"] = { "snippet_backward", "fallback" },
       ["<c-l>"] = { "snippet_forward", "fallback" },
       ["<c-k>"] = { "select_prev", "fallback" },
       ["<c-j>"] = { "select_next", "fallback" },
       ["<cr>"] = { "select_and_accept", "fallback" },
+      ["<tab>"] = { "show_and_insert_or_accept_single", "select_next", "fallback" },
+      ["<s-tab>"] = { "show_and_insert_or_accept_single", "select_prev", "fallback" },
     },
     cmdline = {
       keymap = {
