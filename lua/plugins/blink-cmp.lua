@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------------
 --- github: https://github.com/saghen/blink.cmp
 --- docs: https://cmp.saghen.dev/
---- https://github.com/Saghen/blink.cmp/blob/main/lua/blink/cmp/config/keymap.lua
+--- https://github1s.com/Saghen/blink.cmp/blob/main/lua/blink/cmp/config/keymap.lua
 --- https://github1s.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/extras/coding/blink.lua
 -------------------------------------------------------------------------------------
 return {
@@ -41,13 +41,25 @@ return {
       ["<c-k>"] = { "select_prev", "fallback" },
       ["<c-j>"] = { "select_next", "fallback" },
       ["<cr>"] = { "select_and_accept", "fallback" },
-      ["<tab>"] = { "show_and_insert_or_accept_single", "select_next", "fallback" },
-      ["<s-tab>"] = { "show_and_insert_or_accept_single", "select_prev", "fallback" },
+      ["<tab>"] = {
+        function(cmp)
+          if cmp.snippet_active() then
+            return cmp.accept()
+          else
+            return cmp.select_and_accept()
+          end
+        end,
+        "snippet_forward",
+        "fallback",
+      },
+      ["<s-tab>"] = { "snippet_backward", "fallback" },
     },
     cmdline = {
       keymap = {
         preset = "inherit",
-        ["<c-o>"] = { "show", "fallback" },
+        ["<c-o>"] = { "show", "show_and_insert_or_accept_single", "fallback" },
+        ["<tab>"] = { "show", "show_and_insert_or_accept_single", "select_next", "fallback" },
+        ["<s-tab>"] = { "select_prev", "fallback" },
       },
       completion = {
         menu = {
