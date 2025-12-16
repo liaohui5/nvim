@@ -21,21 +21,23 @@ return {
   {
     -- docs: https://github.com/yetone/avante.nvim
     "yetone/avante.nvim",
-    enabled = false, -- BUG: https://github.com/yetone/avante.nvim/issues/612
+    enabled = true,
     opts = {
-      provider = "qwen",
+      provider = "custom",
       providers = {
-        qwen = {
+        dashscope = {
+          -- aliyun models: https://cloud.siliconflow.cn/me/models
           __inherited_from = "openai",
-          api_key_name = "ALIYUNCS_API_KEY", -- use system environment variable
+          api_key_name = "ALIYUNCS_API_KEY",
           endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
-          model = "qwen2.5-coder-3b-instruct",
-          -- qwen2.5-coder-1.5b-instruct
-          -- qwen2.5-coder-0.5b-instruct
-          -- qwen2.5-coder-1.5b-instruct
-          -- qwen2.5-coder-3b-instruct
-          -- more infomation see:
-          -- https://help.aliyun.com/zh/model-studio/getting-started/models
+          model = "qwen2.5-3b-instruct",
+        },
+        zhipu = {
+          -- zhipu models: https://console.zhipu.com/console/models
+          __inherited_from = "openai",
+          api_key_name = "BIGMODEL_API_KEY",
+          endpoint = "https://open.bigmodel.cn/api/paas/v4",
+          model = "glm-4.5-flash",
         },
       },
       behaviour = {
