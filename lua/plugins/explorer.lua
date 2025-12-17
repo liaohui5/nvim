@@ -138,11 +138,8 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     version = "*",
-    enabled = false,
+    enabled = true,
     event = "VeryLazy",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
     config = function(_, opts)
       local on_attach = function(bufnr)
         local api = require("nvim-tree.api")
@@ -242,6 +239,7 @@ return {
     ---@type snacks.Config
     opts = {
       explorer = {
+        enabled = false,
         replace_netrw = true,
         trash = true, -- move file to trash when "delete"
       },
@@ -270,15 +268,15 @@ return {
         },
       },
     },
-    keys = {
-      {
-        "<c-e>",
-        function()
-          Snacks.explorer()
-        end,
-        mode = "n",
-        desc = "Toggle Explorer",
-      },
-    },
+    -- keys = {
+    --   {
+    --     "<c-e>",
+    --     function()
+    --       Snacks.explorer()
+    --     end,
+    --     mode = "n",
+    --     desc = "Toggle Explorer",
+    --   },
+    -- },
   },
 }
