@@ -8,21 +8,8 @@ return {
   "saghen/blink.cmp",
   enabled = true,
   lazy = "VeryLazy",
-  dependencies = {
-    -- "marcoSven/blink-cmp-yanky",
-    -- "archie-judd/blink-cmp-words",
-    -- "Kaiser-Yang/blink-cmp-avante",
-  },
   opts = {
     ---- https://cmp.saghen.dev/configuration/sources.html
-    -- sources = {
-    --   default = {
-    --     "lsp",
-    --     "snippets",
-    --     "path",
-    --     "buffer",
-    --   },
-    -- },
     completion = {
       keyword = {
         range = "full",
@@ -63,7 +50,7 @@ return {
       },
       completion = {
         menu = {
-          auto_show = false,
+          auto_show = false
         },
       },
     },
