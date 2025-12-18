@@ -1,6 +1,7 @@
 return {
   {
     "MeanderingProgrammer/render-markdown.nvim",
+    enabled = false,
     optional = true,
     opts = {
       file_types = { "Avante" },
@@ -10,7 +11,7 @@ return {
   {
     -- docs: https://github.com/yetone/avante.nvim
     "yetone/avante.nvim",
-    enabled = true,
+    enabled = false,
     opts = {
       provider = "custom",
       providers = {
