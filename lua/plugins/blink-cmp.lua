@@ -9,7 +9,6 @@ return {
   enabled = true,
   lazy = "VeryLazy",
   opts = {
-    ---- https://cmp.saghen.dev/configuration/sources.html
     completion = {
       keyword = {
         range = "full",
@@ -17,6 +16,11 @@ return {
       trigger = {
         show_on_keyword = true,
         show_on_insert_on_trigger_character = true,
+      },
+      menu = {
+        auto_show = function()
+          return vim.g.auto_show_completion
+        end,
       },
     },
     keymap = {
@@ -50,38 +54,46 @@ return {
       },
       completion = {
         menu = {
-          auto_show = false
+          auto_show = false,
         },
       },
     },
   },
   ---- use blink commands --
-  -- keys = {
-  --   {
-  --     -- select previous suggestion item
-  --     "<c-l>",
-  --     function()
-  --       if vim.snippet.active({ direction = 1 }) then
-  --         vim.snippet.jump(1)
-  --       else
-  --         vim.snippet.stop()
-  --       end
-  --     end,
-  --     silent = true,
-  --     mode = { "i", "s" },
-  --   },
-  --   {
-  --     -- select next suggestion item
-  --     "<c-h>",
-  --     function()
-  --       if vim.snippet.active({ direction = -1 }) then
-  --         vim.snippet.jump(-1)
-  --       else
-  --         vim.snippet.stop()
-  --       end
-  --     end,
-  --     silent = true,
-  --     mode = { "i", "s" },
-  --   },
-  -- },
+  keys = {
+    {
+      "<leader>uu",
+      function()
+        vim.g.auto_show_completion = not vim.g.auto_show_completion
+      end,
+      silent = true,
+      mode = "n",
+    },
+    --   {
+    --     -- select previous suggestion item
+    --     "<c-l>",
+    --     function()
+    --       if vim.snippet.active({ direction = 1 }) then
+    --         vim.snippet.jump(1)
+    --       else
+    --         vim.snippet.stop()
+    --       end
+    --     end,
+    --     silent = true,
+    --     mode = { "i", "s" },
+    --   },
+    --   {
+    --     -- select next suggestion item
+    --     "<c-h>",
+    --     function()
+    --       if vim.snippet.active({ direction = -1 }) then
+    --         vim.snippet.jump(-1)
+    --       else
+    --         vim.snippet.stop()
+    --       end
+    --     end,
+    --     silent = true,
+    --     mode = { "i", "s" },
+    --   },
+  },
 }
