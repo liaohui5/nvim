@@ -46,6 +46,7 @@ return {
           -- Monokai gray (for comments, borders, and indent guides)
           grey = "#75715e",
           light_grey = "#8f908a",
+          dark_grey = "#464741",
 
           -- UI colors
           bg_yellow = "#e6db74",
@@ -83,16 +84,16 @@ return {
           ["@punctuation.bracket"] = { fg = "$fg" },
 
           -- Window borders using Monokai gray
-          FloatBorder = { fg = "$grey" },
-          WinSeparator = { fg = "$grey" },
+          FloatBorder = { fg = "$dark_grey" },
+          WinSeparator = { fg = "$dark_grey" },
 
           -- Snacks.nvim indent guides using Monokai gray
           SnacksIndentScope = { fg = "$grey" },
           SnacksPickerBorder = { fg = "$grey" },
 
           -- IndentBlankline (if you use it)
-          SnacksIndent = { fg = "#464741" },
-          NvimTreeIndentMarker = { fg = "#464741" },
+          SnacksIndent = { fg = "$dark_grey" },
+          NvimTreeIndentMarker = { fg = "$dark_grey" },
         },
 
         code_style = {
