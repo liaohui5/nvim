@@ -19,6 +19,7 @@ return {
   {
     "navarasu/onedark.nvim",
     enabled = true,
+    lazy = false,
     priority = 1000,
     config = function()
       local onedark = require("onedark")
@@ -28,7 +29,7 @@ return {
           bg0 = "#272822",
           bg1 = "#3e3d32",
           bg2 = "#49483e",
-          bg3 = "#75715e",
+          bg3 = "#3e3d32", -- original #75715e
           bg_d = "#1e1f1c",
 
           -- Monokai foreground
@@ -60,6 +61,10 @@ return {
         },
 
         highlights = {
+          -- dashboard highlight group can not use variable
+          ["SnacksDashboardFooter"] = { italic = false, fg = "#464741" },
+          ["SnacksDashboardSpecial"] = { italic = false, bold = false, fg = "#a6e22e" },
+
           -- Syntax highlighting (Monokai)
           ["@keyword"] = { fg = "$red" },
           ["@keyword.conditional"] = { fg = "$red" },
@@ -94,6 +99,9 @@ return {
           -- IndentBlankline (if you use it)
           SnacksIndent = { fg = "$dark_grey" },
           NvimTreeIndentMarker = { fg = "$dark_grey" },
+
+          -- for lazygit and which-key board
+          NormalFloat = { bg = "$bg_d" },
         },
 
         code_style = {
