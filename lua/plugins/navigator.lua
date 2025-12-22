@@ -44,6 +44,14 @@ return {
           mode = "n",
         },
         {
+          "<leader>oK",
+          function()
+            navigator.open_in_browser("https://neovim.getkulala.net/docs/getting-started/install")
+          end,
+          desc = "Open kulala docs",
+          mode = "n",
+        },
+        {
           "<leader>ov",
           function()
             if vim.fn.executable("code") then
