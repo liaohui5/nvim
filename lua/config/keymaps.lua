@@ -19,6 +19,10 @@ end
 map({ "n", "v" }, "x", '"_x')
 map({ "n", "v" }, "X", '"_X')
 
+-- scroll up/down
+map("n", "<c-u>", "5kzz")
+map("n", "<c-d>", "5jzz")
+
 -- format
 map({ "n", "v" }, "<leader>ff", "<leader>cf", opts("Format Document"))
 
@@ -32,10 +36,6 @@ if vim.fn.executable("lazygit") == 1 then
 end
 
 map("n", "<c-q>", "<leader>qq", opts("Exit"))
-
-map("n", "<c-u>", "5kzz", opts("Scroll up"))
-
-map("n", "<c-d>", "5jzz", opts("Scroll down"))
 
 map({ "n", "t" }, "<c-x>", "<c-_>", opts("Open terminal"))
 
