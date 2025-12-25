@@ -13,7 +13,7 @@ return {
     keys = {
       {
         "<c-e>",
-        "<leader>e",
+        "<cmd>NvimTreeToggle<cr>",
         remap = true,
         mode = "n",
         desc = "Toggle NvimTree",
@@ -106,7 +106,10 @@ return {
             hide_dotfiles = false,
             hide_gitignored = false,
             hide_hidden = false,
-            never_show = { ".DS_Store" },
+            never_show = {
+              ".DS_Store",
+              "__pycache__",
+            },
           },
           window = {
             width = 32,
@@ -140,8 +143,51 @@ return {
     version = "*",
     enabled = false,
     event = "VeryLazy",
-    config = function(_, opts)
-      local on_attach = function(bufnr)
+    keys = {
+      {
+        "<c-e>",
+        "<cmd>NvimTreeToggle<cr>",
+        mode = "n",
+        desc = "Toggle NvimTree",
+      },
+    },
+    opts = {
+      sync_root_with_cwd = true,
+      view = {
+        cursorline = true,
+        debounce_delay = 15,
+        side = "left",
+        signcolumn = "yes",
+        width = 32,
+      },
+      renderer = {
+        root_folder_label = false, -- hide root folder
+        highlight_git = "all",
+        indent_markers = {
+          enable = true,
+          inline_arrows = false,
+        },
+        icons = {
+          show = {
+            file = true,
+            folder = true,
+            diagnostics = true,
+            bookmarks = true,
+            folder_arrow = false,
+            git = false,
+            modified = false,
+            hidden = false,
+          },
+        },
+      },
+      update_focused_file = {
+        enable = true,
+        exclude = false,
+      },
+      filters = {
+        enable = false,
+      },
+      on_attach = function(bufnr)
         local api = require("nvim-tree.api")
         local keyset = vim.keymap.set
         local function keyopts(desc)
@@ -184,58 +230,21 @@ return {
         keyset("n", "<c-enter>", api.node.run.system,              keyopts("Run System"))
         keyset("n", "<shift-w>", api.tree.collapse_all,            keyopts("Collapse"))
         -- stylua: ignore end
-      end
-      local options = vim.tbl_deep_extend("force", opts, {
-        on_attach = on_attach,
-        sync_root_with_cwd = true,
-        view = {
-          cursorline = true,
-          debounce_delay = 15,
-          side = "left",
-          signcolumn = "yes",
-          width = 32,
-        },
-        renderer = {
-          root_folder_label = false, -- hide root folder
-          highlight_git = "all",
-          indent_markers = {
-            enable = true,
-            inline_arrows = false,
-          },
-          icons = {
-            show = {
-              file = true,
-              folder = true,
-              diagnostics = true,
-              bookmarks = true,
-              folder_arrow = false,
-              git = false,
-              modified = false,
-              hidden = false,
-            },
-          },
-        },
-        update_focused_file = {
-          enable = true,
-          exclude = false,
-        },
-        filters = {
-          enable = false,
-        },
-      })
-      require("nvim-tree").setup(options)
-    end,
-    keys = {
-      {
-        "<c-e>",
-        "<cmd>NvimTreeToggle<cr>",
-        mode = "n",
-        desc = "Toggle NvimTree",
-      },
+      end,
     },
   },
   {
     "folke/snacks.nvim",
+    keys = {
+      {
+        "<c-e>",
+        function()
+          Snacks.explorer()
+        end,
+        mode = "n",
+        desc = "Toggle Explorer",
+      },
+    },
     ---@type snacks.Config
     opts = {
       explorer = {
@@ -252,6 +261,10 @@ return {
             ignored = true,
             follow = false,
             supports_live = true,
+            exclude = {
+              ".DS_Store",
+              "__pycache__",
+            },
             win = {
               list = {
                 keys = {
@@ -265,16 +278,6 @@ return {
             },
           },
         },
-      },
-    },
-    keys = {
-      {
-        "<c-e>",
-        function()
-          Snacks.explorer()
-        end,
-        mode = "n",
-        desc = "Toggle Explorer",
       },
     },
   },
