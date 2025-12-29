@@ -54,3 +54,10 @@ vim.api.nvim_create_autocmd("FileType", {
 --     vim.opt.list = false
 --   end,
 -- })
+
+-- auto set zsh filetype to sh
+vim.filetype.add({
+  extension = {
+    zsh = "sh",
+  },
+})
