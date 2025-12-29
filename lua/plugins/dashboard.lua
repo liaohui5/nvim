@@ -61,6 +61,13 @@ return {
             enabled = package.loaded.lazy ~= nil,
           },
           {
+            icon = "󰒔",
+            key = "m",
+            desc = "Mason dashboard",
+            action = ":Mason",
+            enabled = package.loaded.lazy ~= nil,
+          },
+          {
             icon = "",
             key = "q",
             desc = "Quit neovim",
