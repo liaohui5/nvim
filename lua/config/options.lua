@@ -44,3 +44,8 @@ local disabled_providers = {
 for _, provider in ipairs(disabled_providers) do
   vim.g["loaded_" .. provider .. "_provider"] = 0
 end
+
+-----------------------------------------
+-- intergrate mise
+-----------------------------------------
+vim.env.PATH = string.format("%s/.local/share/mise/shims:%s", vim.env.HOME, vim.env.PATH)
