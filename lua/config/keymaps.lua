@@ -37,7 +37,9 @@ end
 
 map("n", "<c-q>", "<leader>qq", opts("Exit"))
 
-map({ "n", "t" }, "<c-x>", "<c-_>", opts("Open terminal"))
+-- map({ "n", "t" }, "<c-x>", "<c-_>", opts("Open terminal"))
+map("n", "<c-x>", "<c-_>", opts("Open terminal"))
+map("t", "<c-x>", "<c-\\><c-n><c-w>p", opts("Back to buffer"))
 
 map({ "t", "c" }, "<c-h>", "<Left>", opts("Move left"))
 

@@ -37,8 +37,15 @@ return {
     },
     terminal = {
       win = {
-        -- default position is bottom, like vscode terminal
-        position = "float",
+        on_buf = function(self)
+          if self.opts.position ~= "bottom" then
+            return
+          end
+
+          -- just set bottom terminals
+          self.opts.height = 0.3
+          self.opts.wo.winbar = string.format("  %s:%s", self.id, vim.o.shell)
+        end,
       },
     },
   },
