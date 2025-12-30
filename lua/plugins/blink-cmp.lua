@@ -8,8 +8,21 @@ return {
   "saghen/blink.cmp",
   enabled = true,
   lazy = "VeryLazy",
+  keys = {
+    {
+      "<leader>uu",
+      function()
+        vim.g.auto_show_completion = not vim.g.auto_show_completion
+      end,
+      silent = true,
+      mode = "n",
+    },
+  },
   opts = {
     completion = {
+      ghost_text = {
+        enabled = false,
+      },
       keyword = {
         range = "full",
       },
@@ -58,42 +71,5 @@ return {
         },
       },
     },
-  },
-  ---- use blink commands --
-  keys = {
-    {
-      "<leader>uu",
-      function()
-        vim.g.auto_show_completion = not vim.g.auto_show_completion
-      end,
-      silent = true,
-      mode = "n",
-    },
-    --   {
-    --     -- select previous suggestion item
-    --     "<c-l>",
-    --     function()
-    --       if vim.snippet.active({ direction = 1 }) then
-    --         vim.snippet.jump(1)
-    --       else
-    --         vim.snippet.stop()
-    --       end
-    --     end,
-    --     silent = true,
-    --     mode = { "i", "s" },
-    --   },
-    --   {
-    --     -- select next suggestion item
-    --     "<c-h>",
-    --     function()
-    --       if vim.snippet.active({ direction = -1 }) then
-    --         vim.snippet.jump(-1)
-    --       else
-    --         vim.snippet.stop()
-    --       end
-    --     end,
-    --     silent = true,
-    --     mode = { "i", "s" },
-    --   },
   },
 }
