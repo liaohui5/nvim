@@ -7,6 +7,7 @@
 -----------------------------------------
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+vim.g.editorconfig = true
 vim.g.autoformat = false
 vim.g.snacks_animate = false
 vim.g.lazyvim_picker = "auto"

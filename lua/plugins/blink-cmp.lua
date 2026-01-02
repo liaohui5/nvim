@@ -15,6 +15,7 @@ return {
         vim.g.auto_show_completion = not vim.g.auto_show_completion
       end,
       silent = true,
+      desc = "Toggle auto show blink completion menu",
       mode = "n",
     },
   },
