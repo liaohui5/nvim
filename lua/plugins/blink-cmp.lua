@@ -62,12 +62,14 @@ return {
     cmdline = {
       keymap = {
         preset = "inherit",
-        ["<c-o>"] = { "show", "show_and_insert_or_accept_single", "fallback" },
         ["<tab>"] = { "show", "show_and_insert_or_accept_single", "select_next", "fallback" },
         ["<s-tab>"] = { "select_prev", "fallback" },
+        ["<c-h>"] = false,
+        ["<c-l>"] = false,
       },
       completion = {
         menu = {
+          -- disable auto show menu in cmdline
           auto_show = false,
         },
       },

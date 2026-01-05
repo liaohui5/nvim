@@ -26,24 +26,26 @@ map("n", "<c-d>", "5jzz")
 -- format
 map({ "n", "v" }, "<leader>ff", "<leader>cf", opts("Format Document"))
 
+-- rename
 map("n", "<leader>rn", "<leader>cr", opts("Rename Symbol"))
 
+-- save
 map("n", "<leader>fs", "<cmd>wa!<cr>", opts("Save", false))
 
 -- lazygit
-if vim.fn.executable("lazygit") == 1 then
-  map("n", "<c-g>", "<leader>gg", opts("Open lazygit"))
-end
+map("n", "<c-g>", "<leader>gg", opts("Open lazygit"))
 
+-- exit
 map("n", "<c-q>", "<leader>qq", opts("Exit"))
 
+-- toggle terminal
 map({ "n", "t" }, "<c-x>", "<c-_>", opts("Open terminal"))
 -- map("n", "<c-x>", "<c-_>", opts("Open terminal"))
 -- map("t", "<c-x>", "<c-\\><c-n><c-w>p", opts("Back to buffer"))
 
-map({ "t", "c" }, "<c-h>", "<Left>", opts("Move left"))
-
-map({ "t", "c" }, "<c-l>", "<Right>", opts("Move right"))
+-- move left/right in command mode
+map({ "t", "c" }, "<c-h>", "<Left>")
+map({ "t", "c" }, "<c-l>", "<Right>")
 
 -- toggle blank characters visible
 map("n", "<leader>ue", function()
