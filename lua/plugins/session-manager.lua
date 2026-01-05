@@ -1,36 +1,8 @@
 return {
   {
-    -- TODO: use folke/persistence.nvim when pr merged
-    -- https://github.com/folke/persistence.nvim/pull/99
-    "liaohui5/persistence.nvim",
+    -- Disabled default session manager
+    "folke/persistence.nvim",
     enabled = false,
-    event = "VeryLazy",
-    keys = {
-      {
-        "<leader>ql",
-        function()
-          require("persistence").select()
-        end,
-        desc = "Load session",
-        mode = "n",
-      },
-      {
-        "<leader>qd",
-        function()
-          require("persistence").delete()
-        end,
-        desc = "Delete session",
-        mode = "n",
-      },
-      {
-        "<leader>qs",
-        function()
-          require("persistence").save()
-        end,
-        desc = "Save session",
-        mode = "n",
-      },
-    },
   },
   {
     "Shatur/neovim-session-manager",

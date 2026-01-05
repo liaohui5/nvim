@@ -1,6 +1,5 @@
 -- auto switch input method
 -- github: https://github.com/keaising/im-select.nvim
-
 return {
   "keaising/im-select.nvim",
   event = "VeryLazy",

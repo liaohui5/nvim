@@ -17,6 +17,12 @@ return {
     },
   },
   {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    enabled = false,
+    lazy = true,
+  },
+  {
     "navarasu/onedark.nvim",
     enabled = true,
     lazy = false,

@@ -1,22 +1,14 @@
 return {
   {
+    "windwp/nvim-ts-autotag",
+    event = "VeryLazy",
+    enabled = false,
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     event = "VeryLazy",
-    opts = {
-      -- supported languages: https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
-      indent = {
-        enable = true,
-      },
-      incremental_selection = {
-        -- it's removed in new version
-        enable = false,
-      },
-    },
     ensure_installed = {
+      -- supported languages: https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
       "just", -- just docs: https://just.systems/man/zh/
     },
   },

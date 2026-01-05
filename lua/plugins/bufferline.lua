@@ -1,3 +1,4 @@
+-- https://github.com/akinsho/bufferline.nvim
 return {
   "akinsho/bufferline.nvim",
   event = "VeryLazy",
