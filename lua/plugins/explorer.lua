@@ -233,18 +233,50 @@ return {
   --     end,
   --   },
   -- },
+
   {
-    "folke/snacks.nvim",
+    -- https://github.com/nvim-mini/mini.files
+    "nvim-mini/mini.files",
+    version = "*",
+    opts = {
+      options = {
+        permanent_delete = false,
+        use_as_default_explorer = true,
+      },
+
+      -- Module mappings created only inside explorer.
+      -- stylua: ignore start
+      mappings = {
+        close       = "q",
+        go_in       = "l",
+        go_in_plus  = "L",
+        go_out      = "h",
+        go_out_plus = "H",
+        mark_goto   = "'",
+        mark_set    = "m",
+        reset       = "<BS>",
+        reveal_cwd  = "@",
+        show_help   = "g?",
+        synchronize = "= ",
+        trim_left   = "<",
+        trim_right  = ">",
+      },
+      -- stylua: ignore end
+    },
     keys = {
       {
         "<c-e>",
         function()
-          Snacks.explorer()
+          require("mini.files").open()
         end,
         mode = "n",
-        desc = "Toggle Explorer",
+        desc = "Toggle Mini.files",
       },
     },
+  },
+
+  {
+    "folke/snacks.nvim",
     ---@type snacks.Config
     opts = {
       explorer = {
