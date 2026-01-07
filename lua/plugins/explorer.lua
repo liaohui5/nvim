@@ -238,6 +238,7 @@ return {
     -- https://github.com/nvim-mini/mini.files
     "nvim-mini/mini.files",
     version = "*",
+    event = "VeryLazy",
     opts = {
       options = {
         permanent_delete = false,
