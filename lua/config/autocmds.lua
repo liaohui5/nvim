@@ -37,6 +37,16 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- disable wrap line
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("auto_disable_wrap"),
+  pattern = "*",
+  callback = function()
+    vim.opt.wrap = false
+    vim.opt.linebreak = false
+  end,
+})
+
 ---- show listchars in visual mode
 -- vim.api.nvim_create_autocmd("ModeChanged", {
 --   group = augroup("show_listchars_visual"),
