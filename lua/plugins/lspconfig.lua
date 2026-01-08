@@ -29,24 +29,6 @@ return {
           "typescriptreact",
         },
       },
-      biome = {
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#biome
-        filetypes = {
-          -- "vue", -- disabled in vue file
-          "astro",
-          "css",
-          "graphql",
-          "html",
-          "javascript",
-          "javascriptreact",
-          "json",
-          "jsonc",
-          "svelte",
-          "typescript",
-          "typescript.tsx",
-          "typescriptreact",
-        },
-      },
     },
   },
 }
