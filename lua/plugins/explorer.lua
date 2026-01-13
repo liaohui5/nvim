@@ -234,51 +234,59 @@ return {
   --   },
   -- },
 
-  {
-    -- https://github.com/nvim-mini/mini.files
-    "nvim-mini/mini.files",
-    version = "*",
-    event = "VeryLazy",
-    opts = {
-      options = {
-        permanent_delete = false,
-        use_as_default_explorer = true,
-      },
-
-      -- Module mappings created only inside explorer.
-      -- stylua: ignore start
-      mappings = {
-        close       = "q",
-        go_in       = "l",
-        go_in_plus  = "L",
-        go_out      = "h",
-        go_out_plus = "H",
-        mark_goto   = "'",
-        mark_set    = "m",
-        reset       = "<BS>",
-        reveal_cwd  = "@",
-        show_help   = "g?",
-        synchronize = "= ",
-        trim_left   = "<",
-        trim_right  = ">",
-      },
-      -- stylua: ignore end
-    },
-    keys = {
-      {
-        "<c-e>",
-        function()
-          require("mini.files").open()
-        end,
-        mode = "n",
-        desc = "Toggle Mini.files",
-      },
-    },
-  },
-
+  -- {
+  --   -- https://github.com/nvim-mini/mini.files
+  --   "nvim-mini/mini.files",
+  --   version = "*",
+  --   event = "VeryLazy",
+  --   opts = {
+  --     options = {
+  --       permanent_delete = false,
+  --       use_as_default_explorer = true,
+  --     },
+  --
+  --     -- Module mappings created only inside explorer.
+  --     -- stylua: ignore start
+  --     mappings = {
+  --       close       = "q",
+  --       go_in       = "l",
+  --       go_in_plus  = "L",
+  --       go_out      = "h",
+  --       go_out_plus = "H",
+  --       mark_goto   = "'",
+  --       mark_set    = "m",
+  --       reset       = "<BS>",
+  --       reveal_cwd  = "@",
+  --       show_help   = "g?",
+  --       synchronize = "= ",
+  --       trim_left   = "<",
+  --       trim_right  = ">",
+  --     },
+  --     -- stylua: ignore end
+  --   },
+  --   keys = {
+  --     {
+  --       "<c-e>",
+  --       function()
+  --         require("mini.files").open()
+  --       end,
+  --       mode = "n",
+  --       desc = "Toggle Mini.files",
+  --     },
+  --   },
+  -- },
   {
     "folke/snacks.nvim",
     ---@type snacks.Config
+    keys = {
+      {
+        "<c-e>",
+        "<leader>e",
+        remap = true,
+        mode = "n",
+        desc = "Toggle Explorer",
+      },
+    },
     opts = {
       explorer = {
         replace_netrw = true,
