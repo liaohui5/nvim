@@ -52,4 +52,6 @@ end
 -----------------------------------------
 -- intergrate mise
 -----------------------------------------
-vim.env.PATH = string.format("%s/.local/share/mise/shims:%s", vim.env.HOME, vim.env.PATH)
+if vim.fn.executable("mise") == 1 then
+  vim.env.PATH = string.format("%s/.local/share/mise/shims:%s", vim.env.HOME, vim.env.PATH)
+end
