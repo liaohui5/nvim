@@ -13,6 +13,7 @@ vim.g.snacks_animate = false
 vim.g.lazyvim_picker = "auto"
 vim.g.trouble_lualine = false
 vim.g.lazyvim_prettier_needs_config = true -- resolve conflicts with biome plugin
+vim.g.lazyvim_eslint_auto_format = false -- disabled auto format
 vim.g.auto_show_completion = true -- auto show completion
 vim.g.sidekick_nes = false -- auto show ai completion
 
