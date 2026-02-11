@@ -1,5 +1,5 @@
 {
-  "Generator editorconfig": {
+  "Editorconfig Generator": {
     "prefix": "editorconfig",
     "body": [
       "# EditorConfig: https://editorconfig.org",
@@ -12,22 +12,18 @@
       "trim_trailing_whitespace = true",
       "max_line_length = 120",
       "",
-      "# Web 相关语言",
       "[*.{js,jsx,ts,tsx,html,htm,css,scss,less,vue,svelte}]",
       "indent_style = space",
       "indent_size = 2",
       "",
-      "# 常见的配置文件",
       "[*.{xml,json,jsonc,json5,yaml,yml,toml}]",
       "indent_style = space",
       "indent_size = 2",
       "",
-      "# 常见的一些脚本文件",
       "[*.{lua,nix,sql,sh,bash,zsh,fish}]",
       "indent_style = space",
       "indent_size = 2",
       "",
-      "# 没有后缀名的特殊配置文件",
       "[justfile]",
       "indent_style = space",
       "indent_size = 2",
@@ -36,29 +32,24 @@
       "indent_style = space",
       "indent_size = 2",
       "",
-      "# 常见的编程语言源码文件",
       "[*.{py,java,rs,php,c,cpp,h,hpp}]",
       "indent_style = space",
       "indent_size = 4",
       "",
-      "# gofmt 默认就是 tab",
       "[*.{go}]",
       "indent_style = tab",
       "indent_size = 4",
       "",
-      "# python 每行最多字符",
       "[*.py]",
       "max_line_length = 88",
       "",
-      "# Makefile 特殊规则必须使用tab",
       "[Makefile]",
       "indent_style = tab",
       "",
-      "# Markdown 和其他文本文件",
       "[*.{md,markdown,txt}]",
       "trim_trailing_whitespace = true",
       ""
     ],
-    "description": "Generator editorconfig"
+    "description": "Editorconfig Generator"
   }
 }
