@@ -6,6 +6,11 @@
 ----------------------------------------------------------------------------------
 -- set neovide extra global options
 ----------------------------------------------------------------------------------
+vim.g.neovide_padding_top                 = 0
+vim.g.neovide_padding_bottom              = 0
+vim.g.neovide_padding_right               = 0
+vim.g.neovide_padding_left                = 0
+vim.g.neovide_input_ime                   = true
 vim.g.neovide_cursor_animation_length     = 0.05
 vim.g.neovide_cursor_antialiasing         = true
 vim.g.neovide_cursor_animate_command_line = false
@@ -19,7 +24,7 @@ vim.g.neovide_text_contrast               = 0.8
 -- set gui font family
 -- https://neovide.dev/configuration.html#font
 ----------------------------------------------------------------------------------
--- vim.opt.guifont = "JetBrainsMono Nerd Font Mono:h16"
+vim.o.guifont = "Maple Mono NF CN:h18"
 
 ----------------------------------------------------------------------------------
 -- bind hotkeys in neovide
