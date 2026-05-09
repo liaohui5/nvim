@@ -18,13 +18,15 @@ return {
             icon = "",
             key = "r",
             desc = "Restore last session",
-            action = ":SessionManager load_last_session",
+            -- action = ":SessionManager load_last_session",
+            action = ":lua require('persistence').load({ last = true })",
           },
           {
             icon = "",
             key = "l",
             desc = "Load session",
-            action = ":SessionManager load_session",
+            -- action = ":SessionManager load_session",
+            action = ":lua require('persistence').select()",
           },
           {
             icon = "",
