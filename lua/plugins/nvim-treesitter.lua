@@ -2,7 +2,7 @@ return {
   {
     "windwp/nvim-ts-autotag",
     event = "VeryLazy",
-    enabled = false,
+    enabled = true,
   },
   {
     "nvim-treesitter/nvim-treesitter",

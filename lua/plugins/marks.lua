@@ -2,7 +2,7 @@ return {
   -- https://github.com/chentoast/marks.nvim
   "chentoast/marks.nvim",
   lazy = "VeryLazy",
-  enabled = false,
+  enabled = true,
   opts = {
     signs = true,
     default_mappings = false,

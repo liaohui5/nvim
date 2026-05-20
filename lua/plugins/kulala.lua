@@ -1,7 +1,7 @@
 -- docs: https://www.lazyvim.org/extras/util/rest
 return {
   "mistweaverco/kulala.nvim",
-  enabled = false,
+  enabled = true,
   ft = {
     "http",
     "rest",
