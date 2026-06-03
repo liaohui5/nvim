@@ -6,6 +6,9 @@ local M = {}
 ---@field first number: start column
 ---@field last number: last column
 
+-- impactible Lua5.1/JIT/Lua5.4
+local _unpack = unpack or table.unpack
+
 -- find links
 local function find_links(lines)
   local URL_PATTERN =
@@ -17,7 +20,7 @@ local function find_links(lines)
     local last = 0
     local first = 0
     while true do
-      link, first, last = unpack(vim.fn.matchstrpos(line, URL_PATTERN, last))
+      link, first, last = _unpack(vim.fn.matchstrpos(line, URL_PATTERN, last))
       link = vim.trim(link)
       if link == "" then
         break

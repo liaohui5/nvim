@@ -8,6 +8,13 @@ return {
   "saghen/blink.cmp",
   enabled = true,
   lazy = "VeryLazy",
+  version = not vim.g.lazyvim_blink_main and "*",
+  event = { "InsertEnter", "CmdlineEnter" },
+  opts_extend = {
+    "sources.completion.enabled_providers",
+    "sources.compat",
+    "sources.default",
+  },
   keys = {
     {
       "<leader>uu",

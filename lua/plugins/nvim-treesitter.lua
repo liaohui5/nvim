@@ -8,7 +8,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     event = "VeryLazy",
     ensure_installed = {
-      -- supported languages: https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
+      -- supported languages: https://github.com/nvim-treesitter/nvim-treesitter/blob/main/SUPPORTED_LANGUAGES.md
       "just", -- just docs: https://just.systems/man/zh/
     },
   },

@@ -10,12 +10,13 @@ vim.g.maplocalleader = "\\"
 vim.g.editorconfig = true
 vim.g.autoformat = false
 vim.g.snacks_animate = false
-vim.g.lazyvim_picker = "auto"
+vim.g.lazyvim_picker = "snacks"
 vim.g.trouble_lualine = false
 vim.g.lazyvim_prettier_needs_config = true -- resolve conflicts with biome plugin
 vim.g.lazyvim_eslint_auto_format = false -- disabled auto format
 vim.g.auto_show_completion = true -- auto show completion
 vim.g.sidekick_nes = false -- auto show ai completion
+vim.g.lazyvim_rust_diagnostics = "rust-analyzer" -- use rust-analyzer instead of default diagnostic
 
 -----------------------------------------
 -- neovim options

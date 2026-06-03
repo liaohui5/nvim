@@ -277,7 +277,6 @@ return {
   -- },
   {
     "folke/snacks.nvim",
-    ---@type snacks.Config
     keys = {
       {
         "<c-e>",

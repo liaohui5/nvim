@@ -12,7 +12,6 @@ return {
           { prompt = "Select type to generate comment: " },
           function(choice)
             require("neogen").generate({ type = choice })
-            -- vim.cmd("Neogen " .. choice)
           end
         )
       end,

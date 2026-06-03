@@ -47,7 +47,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
----- show listchars in visual mode
+---- show listchars in visual mode(use: <leader>ue)
 -- vim.api.nvim_create_autocmd("ModeChanged", {
 --   group = augroup("show_listchars_visual"),
 --   pattern = "*:v*",
@@ -56,7 +56,7 @@ vim.api.nvim_create_autocmd("FileType", {
 --   end,
 -- })
 
----- hide listchars in normal mode
+---- hide listchars in normal mode(use: <leader>ue)
 -- vim.api.nvim_create_autocmd("ModeChanged", {
 --   group = augroup("show_listchars_normal"),
 --   pattern = "*:n*",
