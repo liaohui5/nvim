@@ -15,7 +15,7 @@ return {
             action = ":StartupTime",
           },
           {
-            icon = "",
+            icon = "󰦛",
             key = "r",
             desc = "Restore last session",
             action = ":SessionManager load_last_session",
