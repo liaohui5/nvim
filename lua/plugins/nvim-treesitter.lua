@@ -36,28 +36,4 @@ return {
       },
     },
   },
-  {
-    -- quick split/join multiple lines
-    "Wansmer/treesj",
-    event = "VeryLazy",
-    vscode = true,
-    keys = {
-      {
-        "gS",
-        function()
-          require("treesj").split()
-        end,
-        desc = "Split lines",
-        mode = "n",
-      },
-      {
-        "gJ",
-        function()
-          require("treesj").join()
-        end,
-        desc = "Join lines",
-        mode = "n",
-      },
-    },
-  },
 }
