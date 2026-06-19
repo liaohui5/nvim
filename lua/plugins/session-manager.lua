@@ -3,19 +3,6 @@ return {
     "folke/persistence.nvim",
     enabled = false,
   },
-  -- {
-  --   -- FEATURE: https://github.com/folke/persistence.nvim/pull/99
-  --   "liaohui5/persistence.nvim",
-  --   enabled = false,
-  --   keys = {
-  --     {
-  --       "<leader>qD",
-  --       "<cmd>lua require('persistence').delete()<cr>",
-  --       desc = "Delete session",
-  --       mode = "n",
-  --     },
-  --   },
-  -- },
   {
     "Shatur/neovim-session-manager",
     enabled = true,

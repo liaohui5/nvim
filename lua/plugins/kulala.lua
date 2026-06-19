@@ -1,4 +1,3 @@
--- docs: https://www.lazyvim.org/extras/util/rest
 return {
   "mistweaverco/kulala.nvim",
   enabled = true,
@@ -14,13 +13,6 @@ return {
           require("kulala.ui").show_verbose()
         end,
       },
-    },
-    lsp = {
-      enable = true,
-      keymaps = false,
-      filetypes = { "http", "rest", "json", "yaml", "bruno" },
-      formatter = {},
-      on_attach = nil,
     },
   },
   keys = {

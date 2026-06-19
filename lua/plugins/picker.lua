@@ -1,4 +1,3 @@
--- https://github.com/ibhagwan/fzf-lua
 return {
   "folke/snacks.nvim",
   priority = 1000,

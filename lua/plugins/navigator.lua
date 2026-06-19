@@ -75,6 +75,30 @@ return {
           desc = "Open project in vscode",
           mode = "n",
         },
+        {
+          "<leader>oz",
+          function()
+            if vim.fn.executable("zed") then
+              vim.cmd("silent !zed " .. vim.fn.expand("%p"))
+            else
+              print("please install zed first")
+            end
+          end,
+          desc = "Open buffer in zed",
+          mode = "n",
+        },
+        {
+          "<leader>oZ",
+          function()
+            if vim.fn.executable("zed") then
+              vim.cmd("silent !zed " .. LazyVim.root.get())
+            else
+              print("please install zed first")
+            end
+          end,
+          desc = "Open project in Zed",
+          mode = "n",
+        },
       }
     end,
   },

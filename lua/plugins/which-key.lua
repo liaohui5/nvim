@@ -3,15 +3,13 @@ return {
   event = "VeryLazy",
   opts = {
     preset = "classic",
-    layout = {
-      spacing = 4,
-      align = "center",
-    },
     disable = {
-      filetypes = {
+      ft = {
+        -- disable in file explorer sidebar
         "TelescopePrompt",
         "NvimTree",
         "neo-tree",
+        "snacks_picker_list",
       },
     },
     icons = {

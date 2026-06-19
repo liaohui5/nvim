@@ -64,4 +64,17 @@ return {
       { "ga", mode = "v", desc = "align by string with preview" },
     },
   },
+  {
+    -- alternatives:
+    -- https://github.com/nvim-mini/mini.splitjoin
+    -- https://github.com/Wansmer/treesj
+    -- https://github.com/AndrewRadev/splitjoin.vim
+    -- https://github.com/bennypowers/splitjoin.nvim
+    "nvim-mini/mini.splitjoin",
+    event = "VeryLazy",
+    enabled = true,
+    opts = {
+      mappings = { toggle = "", split = "gS", join = "gJ", },
+    },
+  },
 }
