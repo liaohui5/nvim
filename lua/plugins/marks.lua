@@ -20,6 +20,7 @@ return {
       -- keymaps menu
       "<leader>m",
       desc = "+marks",
+      mode = "n",
     },
     {
       "mm",
