@@ -15,5 +15,21 @@
       ""
     ],
     "description": "Oxfmt Config Generator"
+  },
+  "Prettier Config Generator": {
+    "prefix": "prettierconfig",
+    "body": [
+      "{",
+      "  \"printWidth\": 120,",
+      "  \"tabWidth\": 2,",
+      "  \"useTabs\": false,",
+      "  \"semi\": true,",
+      "  \"singleQuote\": true,",
+      "  \"trailingCommas\": \"all\",",
+      "  \"bracketSpacing\": true,",
+      "  \"alwaysParens\": true",
+      "}"
+    ],
+    "description": "Prettier Config Generator"
   }
 }
