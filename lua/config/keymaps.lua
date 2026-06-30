@@ -44,8 +44,8 @@ map({ "n", "t" }, "<c-x>", "<c-_>", opts("Open terminal"))
 -- map("t", "<c-x>", "<c-\\><c-n><c-w>p", opts("Back to buffer"))
 
 -- move left/right in command mode
-map({ "t", "c" }, "<c-h>", "<Left>")
-map({ "t", "c" }, "<c-l>", "<Right>")
+map("c", "<c-h>", "<Left>")
+map("c", "<c-l>", "<Right>")
 
 -- toggle blank characters visible
 map("n", "<leader>ue", function()
