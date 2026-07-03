@@ -15,6 +15,7 @@ vim.g.trouble_lualine = false
 vim.g.lazyvim_eslint_auto_format = false -- disabled auto format
 vim.g.auto_show_completion = true -- auto show completion
 vim.g.sidekick_nes = false -- auto show ai completion
+vim.g.lazyvim_prettier_needs_config = false -- disable prettier if config file not exist
 vim.g.lazyvim_rust_diagnostics = "rust-analyzer" -- use rust-analyzer instead of default diagnostic
 
 -----------------------------------------
