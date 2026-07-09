@@ -15,17 +15,6 @@ return {
     "sources.compat",
     "sources.default",
   },
-  keys = {
-    {
-      "<leader>uu",
-      function()
-        vim.g.auto_show_completion = not vim.g.auto_show_completion
-      end,
-      silent = true,
-      desc = "Toggle auto show blink completion menu",
-      mode = "n",
-    },
-  },
   opts = {
     completion = {
       ghost_text = {
@@ -38,22 +27,17 @@ return {
         show_on_keyword = true,
         show_on_insert_on_trigger_character = true,
       },
-      menu = {
-        auto_show = function()
-          return vim.g.auto_show_completion
-        end,
-      },
     },
     keymap = {
       preset = "default",
-      ["<c-space>"] = false, -- for switch input method
-      ["<c-o>"] = { "show", "show_documentation", "hide_documentation", "fallback" },
-      ["<c-h>"] = { "snippet_backward", "fallback" },
-      ["<c-l>"] = { "snippet_forward", "fallback" },
-      ["<c-k>"] = { "select_prev", "fallback" },
-      ["<c-j>"] = { "select_next", "fallback" },
-      ["<cr>"] = { "select_and_accept", "fallback" },
-      ["<tab>"] = {
+      ["<C-space>"] = false, -- for switch input method
+      ["<C-o>"] = { "show", "show_documentation", "hide_documentation", "fallback" },
+      ["<C-h>"] = { "snippet_backward", "fallback" },
+      ["<C-l>"] = { "snippet_forward", "fallback" },
+      ["<C-k>"] = { "select_prev", "fallback" },
+      ["<C-j>"] = { "select_next", "fallback" },
+      ["<CR>"] = { "select_and_accept", "fallback" },
+      ["<Tab>"] = {
         function(cmp)
           if cmp.snippet_active() then
             return cmp.accept()
@@ -64,20 +48,22 @@ return {
         "snippet_forward",
         "fallback",
       },
-      ["<s-tab>"] = { "snippet_backward", "fallback" },
+      ["<S-Tab>"] = { "snippet_backward", "fallback" },
     },
     cmdline = {
       keymap = {
         preset = "inherit",
-        ["<tab>"] = { "show", "show_and_insert_or_accept_single", "select_next", "fallback" },
-        ["<s-tab>"] = { "select_prev", "fallback" },
-        ["<c-h>"] = false,
-        ["<c-l>"] = false,
+        ["<Tab>"] = { "select_next", "fallback" },
+        ["<S-Tab>"] = { "select_prev", "fallback" },
+        ["<CR>"] = { "accept_and_enter", "fallback" },
+        ["<C-h>"] = false,
+        ["<C-l>"] = false,
       },
       completion = {
         menu = {
-          -- disable auto show menu in cmdline
-          auto_show = false,
+          auto_show = function(ctx)
+            return vim.fn.getcmdtype() == ":" and ctx.bounds.length > 1
+          end,
         },
       },
     },
