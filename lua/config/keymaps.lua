@@ -36,7 +36,7 @@ map("n", "<leader>fs", "<cmd>wa!<cr>", opts("Save", false))
 map("n", "<c-g>", "<leader>gg", opts("Open lazygit"))
 
 -- exit
-map("n", "<c-q>", "<leader>qq", opts("Exit"))
+-- map("n", "<c-q>", "<leader>qq", opts("Exit"))
 
 -- toggle terminal
 map({ "n", "t" }, "<c-x>", "<c-_>", opts("Open terminal"))
