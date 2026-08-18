@@ -74,7 +74,11 @@ return {
     event = "VeryLazy",
     enabled = true,
     opts = {
-      mappings = { toggle = "", split = "gS", join = "gJ", },
+      mappings = {
+        toggle = "",
+        split = "gS",
+        join = "gJ",
+      },
     },
   },
 }
