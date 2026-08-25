@@ -1,0 +1,45 @@
+{
+  "testmod": {
+    "prefix": "testmod",
+    "body": [
+      "#[cfg(test)]",
+      "mod ${1:unit_test} {",
+      "  use super::*;",
+      "",
+      "  #[test]",
+      "  fn test_case1() {",
+      "    ${2:todo!();}",
+      "  }",
+      "}"
+    ],
+    "description": "create unit test mod"
+  },
+
+  "testfn": {
+    "prefix": "testfn",
+    "body": [
+      "#[test]",
+      "fn test_case1() {",
+      "  ${1:todo!()}",
+      "}"
+    ],
+    "description": "create unit test case"
+  },
+
+  "fncomment": {
+    "prefix": "fncomment",
+    "body": [
+      "///  Function description",
+      "///",
+      "/// Example",
+      "/// ```",
+      "/// use ${1:crates::capitalize};",
+      "///",
+      "/// let str = capitalize(\"hello world\");",
+      "/// println!(\"{str}\") // Hello world",
+      "/// ```",
+      ""
+    ],
+    "description": "create docs comment for function"
+  }
+}
