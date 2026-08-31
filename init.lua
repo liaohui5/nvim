@@ -9,11 +9,6 @@
 -- | |              | || |              | || |              | || |              | |
 -- | '--------------' || '--------------' || '--------------' || '--------------' |
 --  '----------------'  '----------------'  '----------------'  '----------------'
--- neovide gui client: https://neovide.dev
-if vim.g.neovide then
-  require("client.neovide")
-end
-
 -- bootstrap LazyVIM and plugins
 ---@diagnostic disable-next-line: different-requires
 require("config.lazy")
@@ -21,7 +16,6 @@ require("config.lazy")
 -----------------------------------------------------------------------------------
 -- load local plugin development environment example
 -----------------------------------------------------------------------------------
-
 -- vim.opt.runtimepath:append("$HOME/codes/example.nvim")
 -- local plugin = require("example")
 -- plugin.setup({})
