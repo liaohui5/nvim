@@ -53,3 +53,18 @@ map("n", "<leader>ue", function()
 end, {
   desc = "Toggle extra chars visible",
 })
+
+-- close other buffers(not pinned)
+map("n", "<leader>bo", function()
+  local buf = vim.api.nvim_get_current_buf()
+  local bufferline = require("bufferline")
+  local components = require("bufferline.state").components
+  for _, item in ipairs(components) do
+    if not (item.group == "pinned" or item.id == buf) then
+      bufferline.unpin_and_close(item.id)
+    end
+  end
+end, { desc = "Delete Other Buffers(not pinned)" })
+
+-- close other buffers(all)
+map("n", "<leader>bO", Snacks.bufdelete.other, { desc = "Delete Other Buffers" })

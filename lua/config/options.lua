@@ -15,7 +15,7 @@ vim.g.trouble_lualine = false
 vim.g.lazyvim_eslint_auto_format = false -- disabled auto format by eslint
 vim.g.sidekick_nes = false -- auto show ai completion
 vim.g.lazyvim_prettier_needs_config = false -- disable prettier if config file not exist
-vim.g.lazyvim_rust_diagnostics = "rust-analyzer" -- "rust-analyzer" or "bacon-ls"
+vim.g.lazyvim_rust_diagnostics = "bacon-ls" -- "rust-analyzer" or "bacon-ls"
 
 -----------------------------------------
 -- neovim options
