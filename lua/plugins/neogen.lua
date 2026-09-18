@@ -11,7 +11,9 @@ return {
           { "func", "class", "type", "file" },
           { prompt = "Select type to generate comment: " },
           function(choice)
-            require("neogen").generate({ type = choice })
+            if choice then
+              require("neogen").generate({ type = choice })
+            end
           end
         )
       end,
