@@ -1,6 +1,6 @@
 return {
   "mistweaverco/kulala.nvim",
-  enabled = true,
+  enabled = false,
   ft = {
     "http",
     "rest",
